@@ -1,12 +1,32 @@
 import serial
+import serial.tools.list_ports
 import json
 import pygame
 import time
+import sys
 
-# Configuração da porta serial
-ser = serial.Serial('/dev/ttyUSB0', 9600)# no windows pode ser 'COM3' ou outra porta
-time.sleep(2)
+# Detecta portas disponíveis
+ports = list(serial.tools.list_ports.comports())
+porta_serial = None
 
+for port in ports:
+    if "ttyUSB" in port.device or "ttyACM" in port.device:
+        porta_serial = port.device
+        break
+
+if not porta_serial:
+    print("Nenhum dispositivo serial encontrado (ex: /dev/ttyUSB0 ou /dev/ttyACM0).")
+    sys.exit(1)
+
+# Tenta abrir a porta
+try:
+    ser = serial.Serial(porta_serial, 9600)
+    time.sleep(2)
+except serial.SerialException as e:
+    print(f"Erro ao abrir a porta serial {porta_serial}: {e}")
+    sys.exit(1)
+
+    
 # Inicialização do PyGame e joystick
 pygame.init()
 screen = pygame.display.set_mode((400, 180))
