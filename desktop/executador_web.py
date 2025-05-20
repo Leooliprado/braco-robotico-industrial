@@ -4,7 +4,7 @@ import socketserver
 import webbrowser
 import time
 
-PORTA = 8000
+PORTA = 8080
 
 def iniciar_executador_web():
     # Caminho do script atual
