@@ -5,6 +5,9 @@ import pygame
 import time
 import sys
 
+from web.executador_web import iniciar_executador_web
+
+
 # Detecta portas disponíveis
 ports = list(serial.tools.list_ports.comports())
 porta_serial = None
@@ -35,6 +38,9 @@ pygame.display.set_caption("Controle Braço Robótico PS2 - Modo Analógico")
 if pygame.joystick.get_count() == 0:
     print("Nenhum joystick encontrado!")
     exit()
+
+
+iniciar_executador_web() 
 
 joystick = pygame.joystick.Joystick(0)
 joystick.init()
