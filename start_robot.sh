@@ -3,7 +3,7 @@ cd desktop/
 
 source venv/bin/activate
 
-python3 braco_robotico.py
+python3 rum_app.py
 
 # Mantém o terminal aberto após a execução
 echo ""
