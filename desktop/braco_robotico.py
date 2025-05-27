@@ -32,7 +32,7 @@ def rum_braco():
     while True:
         eventos = get_gamepad()
         for evento in eventos:
-            print(evento.code, evento.state)  # DEBUG: Mostra todos os eixos e valores
+            #print(evento.code, evento.state)  # DEBUG: Mostra todos os eixos e valores
             
             if evento.ev_type == "Absolute":
                 # Eixo X (analógico esquerdo horizontal - PS4: ABS_X)
@@ -75,10 +75,30 @@ def rum_braco():
                     else:
                         estado['GA'] = {'sentido': 'parado', 'passos': 0}
             
-            # Você pode adicionar controles por botões também se quiser
+            #R1 L1
             elif evento.ev_type == "Key":
                 if evento.code == "BTN_TR" and evento.state == 1:  # Gatilho R1
                     print("Botão R1 pressionado")
                 elif evento.code == "BTN_TL" and evento.state == 1:  # Gatilho L1
                     print("Botão L1 pressionado")
+            
 
+      # Gatilho L2 (ABS_Z)
+            if evento.code == "BTN_TR2" and evento.state == 1:
+                print("R2 (digital) pressionado")
+            elif evento.code == "ABS_RZ":
+                valor = evento.state / 255.0
+                if valor > 0.2:
+                    print(f"R2 (analógico) pressionado com intensidade: {valor:.2f}")
+
+           # Gatilho L2 (ABS_Z)
+            if evento.ev_type == "Key" and evento.code == "BTN_TL2" and evento.state == 1:
+                print("Botão L2 (digital) pressionado")
+
+            elif evento.ev_type == "Absolute" and evento.code == "ABS_Z":
+                valor = evento.state / 255.0
+                if valor > 0.2:
+                    print(f"L2 (analógico) pressionado com intensidade: {valor:.2f}")
+
+
+            
