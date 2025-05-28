@@ -1,11 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="UTF-8" />
+    <title>Monitor de Comando JSON</title>
 </head>
 <body>
-    
+    <h1>Comando Atual:</h1>
+    <pre id="comando"></pre>
+    <p>Última atualização: <span id="ultimaAtualizacao"></span></p>
+
+    <script>
+        // Variável para armazenar o último conteúdo
+        let ultimoConteudo = null;
+        
+        async function buscarComando() {
+            try {
+                console.log("Buscando comando...");
+                // Usando cache-busting com timestamp
+                const url = 'comando.json?' + new Date().getTime();
+                const res = await fetch(url);
+                
+                if (!res.ok) throw new Error(`Erro ${res.status}: ${res.statusText}`);
+                
+                // Já que é JSON, podemos usar .json() diretamente
+                const comando = await res.json();
+                console.log("Dados recebidos:", comando);
+                
+                // Atualiza a data/hora da última atualização
+                document.getElementById('ultimaAtualizacao').textContent = new Date().toLocaleString();
+                
+                // Converte para string formatada
+                const conteudoAtual = JSON.stringify(comando, null, 2);
+                
+                // Só atualiza se o conteúdo mudou
+                if (conteudoAtual !== ultimoConteudo) {
+                    document.getElementById('comando').textContent = conteudoAtual;
+                    ultimoConteudo = conteudoAtual;
+                    console.log("Conteúdo atualizado!");
+                }
+                
+            } catch (error) {
+                console.error("Erro na requisição:", error);
+                document.getElementById('comando').textContent = 'Erro: ' + error.message;
+            } finally {
+                // Agenda a próxima verificação após 1 segundo
+                setTimeout(buscarComando, 1000);
+            }
+        }
+
+        // Inicia o monitoramento
+        document.addEventListener('DOMContentLoaded', buscarComando);
+    </script>
 </body>
 </html>

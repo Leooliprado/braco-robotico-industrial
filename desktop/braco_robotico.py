@@ -4,6 +4,8 @@ import serial
 import time
 import threading
 
+
+
 # Inicializa porta serial
 ser = serial.Serial('/dev/ttyUSB0', 9600) # Windows: 'COM3', Linux: '/dev/ttyUSB0'
 time.sleep(2)
@@ -23,6 +25,10 @@ def enviar_loop():
         if comando:
             ser.write((json.dumps(comando) + "\n").encode())
             print("Enviado:", comando)
+               # Escreve o comando em um arquivo txt
+            with open('comando.json', 'w') as f:
+                f.write(json.dumps(comando))
+            print("Comando salvo:", comando)
         time.sleep(0.1)
 
 # Inicia thread para envio contínuo
