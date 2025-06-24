@@ -1,11 +1,10 @@
-
-# 🤖 braco-robotico-industrial
+# <img src="https://img.icons8.com/emoji/48/robot-emoji.png" width="30"/> Braço Robotico Industrial
 
 Sistema de controle para braço robótico industrial utilizando um controle de videogame como joystick. Os comandos são enviados via JSON para um Arduino Mega que controla motores de passo, com visualização em tempo real via interface web.
 
 ---
 
-## 📦 Clonar o Projeto
+## <img src="https://img.icons8.com/fluency/48/download.png" width="28"/> Clonar o Projeto
 
 Clone o repositório com o comando abaixo:
 
@@ -15,11 +14,11 @@ git clone https://github.com/Leooliprado/braco-robotico-industrial.git
 
 ---
 
-## 🚀 Como Executar
+## <img src="https://img.icons8.com/fluency/48/play.png" width="28"/> Como Executar
 
 Após clonar o repositório:
 
-### 💻 Windows
+### <img src="https://img.icons8.com/fluency/48/windows-10.png" width="20"/> Windows
 
 Clique duas vezes no arquivo:
 
@@ -27,7 +26,7 @@ Clique duas vezes no arquivo:
 start_robot.bat
 ```
 
-### 🐧 Linux
+### <img src="https://img.icons8.com/color/48/linux.png" width="20"/> Linux
 
 Dê permissão de execução e execute:
 
@@ -40,16 +39,17 @@ chmod +x start_robot.sh
 
 ---
 
-## 🎮 Funcionalidade
+## <img src="https://img.icons8.com/fluency/48/controller.png" width="28"/> Funcionalidade
 
-* Controle dos eixos X, Y, Z e GA via gamepad (ex: controle PS4).
+
+* Controle dos eixos X, Y, Z e GA via gamepad (controle de PS4).
 * Comunicação serial com Arduino via JSON.
 * Visualização dos comandos em tempo real por navegador.
 * Visualização da câmera ao vivo.
 
 ---
 
-## 🌐 Interface Web
+## <img src="https://img.icons8.com/fluency/48/internet.png" width="28"/> Interface Web
 
 Acesse pelo navegador:
 
@@ -58,22 +58,23 @@ http://localhost:8080
 ```
 
 * **Comando Atual:** Exibe o JSON enviado ao Arduino.
-* **Câmera Ao Vivo:** Mostra o stream da câmera (ex: `http://192.168.15.12:81/stream`).
+* **Câmera Ao Vivo:** Exibe o stream da câmera ESP32-CAM (usando o código padrão de demonstração da webcam), exemplo de URL: `http://192.168.15.12:81/stream`.
+
 
 ---
 
-## 🔌 Hardware Recomendado
+## <img src="https://img.icons8.com/fluency/48/electrical.png" width="28"/> Hardware Recomendado
 
 * Arduino Mega 2560
 * Drivers A4988 ou similares
 * Motores de passo
-* Controle de videogame (USB)
+* Controle de videogame USB (DualShock 4 - PS4)
 * Câmera IP (opcional)
 * Fonte externa adequada para motores
 
 ---
 
-## 📘 Exemplo de Comando Enviado
+## <img src="https://img.icons8.com/fluency/48/source-code.png" width="28"/> Exemplo de Comando Enviado
 
 ```json
 {
@@ -86,19 +87,14 @@ http://localhost:8080
 
 ---
 
-## 👨‍💻 Autores
+## <img src="https://img.icons8.com/fluency/48/conference-background-selected.png" width="28"/> Autores
 
-Desenvolvido por \[Leonardo De Oliveira Prado e Felipe Silveira Volpe.].
+Desenvolvido por **Leonardo De Oliveira Prado** e **Felipe Silveira Volpe**.
 
 ---
 
-## 📝 Licença
+## <img src="https://img.icons8.com/fluency/48/privacy.png" width="28"/> Licença
 
 Este projeto é de uso livre, inclusive para modificações, **desde que o autor principal seja mencionado** nos créditos de qualquer versão derivada.
 
-
-
-
 ---
-
-
