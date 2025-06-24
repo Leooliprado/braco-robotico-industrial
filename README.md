@@ -88,7 +88,7 @@ http://localhost:8080
 
 ## 👨‍💻 Autores
 
-Desenvolvido por \Leonardo De Oliveira Prado e Felipe Silveira Volpe.
+Desenvolvido por \[Leonardo De Oliveira Prado e Felipe Silveira Volpe.].
 
 ---
 
