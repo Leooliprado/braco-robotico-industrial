@@ -67,9 +67,9 @@ http://localhost:8080
 
 * Arduino Mega 2560
 * Drivers A4988 ou similares
-* Motores de passo
+* Motores de passo nema 17
 * Controle de videogame USB (DualShock 4 - PS4)
-* Câmera IP (opcional)
+* ESP32-CAM (opcional)
 * Fonte externa adequada para motores
 
 ---
@@ -84,6 +84,17 @@ http://localhost:8080
   "GA": {"sentido": "tras", "passos": 100}
 }
 ```
+
+---
+
+## <img src="https://img.icons8.com/fluency/48/robot.png" width="28"/> Estrutura do Braço Robótico
+
+- [Projeto Original do Braço Robótico](https://www.printables.com/model/132260-we-r24-six-axis-robot-arm/files)  
+  *Descrição:* Projeto base usado como inspiração.
+
+- [Projeto modificado que usei no meu projeto](https://www.thingiverse.com/thing:5672870)  
+  *Descrição:* Adaptação e melhorias feitas a partir do projeto original.
+
 
 ---
 
