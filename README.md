@@ -1,4 +1,4 @@
-````markdown
+
 # 🤖 braco-robotico-industrial
 
 Sistema de controle para braço robótico industrial utilizando um controle de videogame como joystick. Os comandos são enviados via JSON para um Arduino Mega que controla motores de passo, com visualização em tempo real via interface web.
@@ -97,8 +97,8 @@ Desenvolvido por \[Leonardo De Oliveira Prado e Felipe Silveira Volpe.].
 Este projeto é de uso livre, inclusive para modificações, **desde que o autor principal seja mencionado** nos créditos de qualquer versão derivada.
 
 
-```
+
 
 ---
 
-```
+
