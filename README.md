@@ -27,7 +27,7 @@ Clique duas vezes no arquivo:
 start_robot.bat
 ```
 
-### 🐧 Linux/macOS
+### 🐧 Linux
 
 Dê permissão de execução e execute:
 
