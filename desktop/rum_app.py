@@ -13,3 +13,4 @@ thread_braco.start()
 iniciar_executador_web()
 
 # Não precisa de join, pois daemon para junto com o processo
+
