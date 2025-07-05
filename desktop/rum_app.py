@@ -1,17 +1,15 @@
-import threading
 from braco_robotico import rum_braco
 from executador_web import iniciar_executador_web
+import threading
 
-# Cria threads para cada função
-thread_web = threading.Thread(target=iniciar_executador_web)
-
+# Cria a thread para o braço robótico como daemon
 thread_braco = threading.Thread(target=rum_braco)
+thread_braco.daemon = True
 
-# Inicia as threads
-thread_web.start()
+# Inicia a thread
 thread_braco.start()
 
+# Na thread principal, roda o app PyQt5
+iniciar_executador_web()
 
-# Opcional: esperar as threads terminarem (bloqueia aqui)
-thread_braco.join()
-thread_web.join()
+# Não precisa de join, pois daemon para junto com o processo

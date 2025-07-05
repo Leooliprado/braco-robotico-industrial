@@ -1,33 +1,64 @@
+import sys
 import os
+import threading
 import http.server
 import socketserver
-import webbrowser
-import time
+from PyQt5.QtWidgets import QApplication, QMainWindow
+from PyQt5.QtWebEngineWidgets import QWebEngineView
+from PyQt5.QtCore import QUrl
 
 PORTA = 8080
 
-def iniciar_executador_web():
-    # Caminho do script atual
-    pasta_script = os.path.dirname(os.path.abspath(__file__))
-    # Pasta 'web' fica no mesmo nível que a pasta do script, então sobe um nível e entra em 'web'
-    diretorio_web = os.path.abspath(os.path.join(pasta_script, '..', 'web'))
+class TCPServerComReuso(socketserver.TCPServer):
+    allow_reuse_address = True
 
-    # Muda o diretório para a pasta 'web'
-    os.chdir(diretorio_web)
+class ServidorThread(threading.Thread):
+    def __init__(self, porta):
+        super().__init__()
+        self.porta = porta
+        self.httpd = None
 
-    class TCPServerComReuso(socketserver.TCPServer):
-        allow_reuse_address = True
+    def run(self):
+        # Caminho do script atual
+        pasta_script = os.path.dirname(os.path.abspath(__file__))
+        diretorio_web = os.path.abspath(os.path.join(pasta_script, '..', 'web'))
+        os.chdir(diretorio_web)
 
-    Handler = http.server.SimpleHTTPRequestHandler
-
-    with TCPServerComReuso(("", PORTA), Handler) as httpd:
-        url = f"http://localhost:{PORTA}"
-        print(f"Servidor rodando em {url}")
-
-        time.sleep(1)
-        webbrowser.open(url)
-
-        try:
+        Handler = http.server.SimpleHTTPRequestHandler
+        with TCPServerComReuso(("", self.porta), Handler) as httpd:
+            self.httpd = httpd
+            print(f"Servidor rodando em http://localhost:{self.porta}")
             httpd.serve_forever()
-        except KeyboardInterrupt:
-            print("\nServidor interrompido manualmente.")
+
+    def stop(self):
+        if self.httpd:
+            print("Parando servidor HTTP...")
+            self.httpd.shutdown()
+
+class MainWindow(QMainWindow):
+    def __init__(self, servidor_thread):
+        super().__init__()
+        self.servidor_thread = servidor_thread
+
+        self.setWindowTitle("Braço Robotico Industrial")
+        self.setGeometry(100, 100, 800, 600)# tamanho da janela sem maximizar
+        self.showMaximized()#deicha em tela cheia (maximizar)
+
+
+        view = QWebEngineView()
+        view.load(QUrl(f"http://localhost:{PORTA}/index.html"))
+        self.setCentralWidget(view)
+
+    def closeEvent(self, event):
+        self.servidor_thread.stop()
+        event.accept()
+
+def iniciar_executador_web():
+    """Função para iniciar o servidor + janela"""
+    servidor_thread = ServidorThread(PORTA)
+    servidor_thread.start()
+
+    app = QApplication(sys.argv)
+    janela = MainWindow(servidor_thread)
+    janela.show()
+    sys.exit(app.exec_())
