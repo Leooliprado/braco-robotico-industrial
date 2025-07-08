@@ -55,24 +55,24 @@ def rum_braco():
                 elif evento.code == "ABS_Y":
                     valor_normalizado = (evento.state - 128) / 128.0
                     if valor_normalizado > 0.5:
-                        estado['Y'] = {'sentido': 'tras', 'passos': int(10 * abs(valor_normalizado))}
-                    elif valor_normalizado < -0.5:
                         estado['Y'] = {'sentido': 'frente', 'passos': int(10 * abs(valor_normalizado))}
+                    elif valor_normalizado < -0.5:
+                        estado['Y'] = {'sentido': 'tras', 'passos': int(10 * abs(valor_normalizado))}
                     else:
                         estado['Y'] = {'sentido': 'parado', 'passos': 0}
                 
                 # Eixo Z (analógico direito horizontal - PS4: ABS_RX)
-                elif evento.code == "ABS_RX":
+                elif evento.code == "ABS_RY":
                     valor_normalizado = (evento.state - 128) / 128.0
                     if valor_normalizado > 0.5:
-                        estado['Z'] = {'sentido': 'frente', 'passos': int(10 * abs(valor_normalizado))}
-                    elif valor_normalizado < -0.5:
                         estado['Z'] = {'sentido': 'tras', 'passos': int(10 * abs(valor_normalizado))}
+                    elif valor_normalizado < -0.5:
+                        estado['Z'] = {'sentido': 'frente', 'passos': int(10 * abs(valor_normalizado))}
                     else:
                         estado['Z'] = {'sentido': 'parado', 'passos': 0}
                 
                 # Eixo GA (analógico direito vertical - PS4: ABS_RY)
-                elif evento.code == "ABS_RY":
+                elif evento.code == "ABS_RX":
                     valor_normalizado = (evento.state - 128) / 128.0
                     if valor_normalizado > 0.5:
                         estado['GA'] = {'sentido': 'tras', 'passos': int(10 * abs(valor_normalizado))}
