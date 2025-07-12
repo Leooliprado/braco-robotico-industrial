@@ -1,11 +1,15 @@
 #include <AccelStepper.h>
 #include <ArduinoJson.h>  
+#include <Servo.h>
 
 // Motores
 AccelStepper motorX(AccelStepper::DRIVER, 54, 55);
 AccelStepper motorY(AccelStepper::DRIVER, 60, 61);
 AccelStepper motorZ(AccelStepper::DRIVER, 46, 48);
 AccelStepper motorGA(AccelStepper::DRIVER, 26, 28);
+
+// Servo
+Servo servoGA2;  // GA2 no pino 11
 
 // Pinos de ENABLE
 #define X_ENABLE_PIN  38
@@ -34,17 +38,20 @@ void setup() {
   motorZ.setMaxSpeed(1000); motorZ.setAcceleration(900);
   motorGA.setMaxSpeed(1000); motorGA.setAcceleration(900);
 
-  Serial.println("Envie JSON para controlar os motores.");
+  // Inicializa servo no pino 11 (Servo0 RAMPS)
+  servoGA2.attach(11);
+
+  Serial.println("Envie JSON para controlar os motores e o servo.");
 }
 
 void loop() {
-  // Chamada constante para garantir movimento contínuo
+  // Motores
   motorX.run();
   motorY.run();
   motorZ.run();
   motorGA.run();
 
-  // Monta o buffer do JSON linha por linha
+  // Recebe JSON
   while (Serial.available()) {
     char c = Serial.read();
     if (c == '\n') {
@@ -58,9 +65,10 @@ void loop() {
         moverMotor(doc, "Y", motorY);
         moverMotor(doc, "Z", motorZ);
         moverMotor(doc, "GA", motorGA);
+        moverServo(doc, "GA2", servoGA2);
         Serial.println("Comando recebido.");
       }
-      bufferSerial = "";  // limpa buffer
+      bufferSerial = "";
     } else {
       bufferSerial += c;
     }
@@ -90,6 +98,24 @@ void moverMotor(JsonDocument& doc, const char* nome, AccelStepper& motor) {
   Serial.println(" passos");
 }
 
+void moverServo(JsonDocument& doc, const char* nome, Servo& servo) {
+  if (!doc.containsKey(nome)) return;
+
+  // Lê o campo "agulo" (ângulo) do JSON
+  int angulo = doc[nome]["agulo"];
+
+  // Limita o ângulo entre 0 e 180 para segurança
+  angulo = constrain(angulo, 0, 180);
+
+  servo.write(angulo);
+
+  Serial.print("Servo ");
+  Serial.print(nome);
+  Serial.print(" -> angulo: ");
+  Serial.println(angulo);
+}
+
+
 
 /*
 
@@ -99,6 +125,7 @@ void moverMotor(JsonDocument& doc, const char* nome, AccelStepper& motor) {
   "Y": {"sentido": "tras", "passos": 25},
   "Z": {"sentido": "frente", "passos": 75},
   "GA": {"sentido": "tras", "passos": 100}
+  "GA2": {"sentido": "tras", "agulo": 100}
 }
 
 
