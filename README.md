@@ -25,7 +25,35 @@ inputs
 pyserial
 ````
 
-Para instalar, ative o ambiente virtual e execute::
+**Passo a passo recomendado:**
+
+1. Navegue até a pasta `desktop` do projeto:
+
+```bash
+cd desktop
+```
+
+2. Crie o ambiente virtual dentro desta pasta:
+
+```bash
+python -m venv venv
+```
+
+3. Ative o ambiente virtual:
+
+* **Windows:**
+
+  ```bash
+  venv\Scripts\activate
+  ```
+
+* **Linux / macOS:**
+
+  ```bash
+  source venv/bin/activate
+  ```
+
+4. Instale as dependências:
 
 ```bash
 pip install -r requirements.txt
