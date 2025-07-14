@@ -139,9 +139,6 @@ Assim, você poderá iniciar o sistema com um **clique**.
 ---
 
 
-
----
-
 ## <img src="https://img.icons8.com/fluency/48/electrical.png" width="28"/> Hardware Recomendado
 
 * Arduino Mega 2560
