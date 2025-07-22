@@ -1,0 +1,147 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #2c3e50;
+    text-align: center;
+    font-size: 2.2em;
+}
+
+.linhaFlex {
+    display: flex;
+}
+
+.container {
+    width: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.json-box {
+    min-width: 300px;
+    max-width: 500px;
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.json-box:hover {
+    transform: translateY(-5px);
+}
+
+.camera-box {
+    flex: 1;
+    height: 50vh;
+    min-width: 320px;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.camera-box:hover {
+    transform: translateY(-5px);
+}
+
+.camera-box h2 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.camera-box img {
+    width: 100%;
+    max-width: 640px;
+    height: auto;
+    max-height: 480px;
+    border-radius: 8px;
+    border: 2px solid #e0e0e0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    max-height: 400px;
+    overflow-y: auto;
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 0.9em;
+    border-left: 4px solid #3498db;
+}
+
+#ultimaAtualizacao {
+    font-style: italic;
+    color: #7f8c8d;
+    font-size: 0.9em;
+    margin-top: 10px;
+    display: block;
+    text-align: right;
+}
+
+/* Estilos do botão */
+#toggleGravar {
+    display: block;
+    width: 25%;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 2.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.gravar {
+    background-color: #2ecc71;
+    color: white;
+}
+
+.gravar:hover {
+    background-color: #27ae60;
+    box-shadow: 0 2px 10px rgba(46, 204, 113, 0.3);
+}
+
+.parar {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.parar:hover {
+    background-color: #c0392b;
+    box-shadow: 0 2px 10px rgba(231, 76, 60, 0.3);
+}
+
+/* Scrollbar personalizada */
+pre::-webkit-scrollbar {
+    width: 8px;
+}
+
+pre::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+pre::-webkit-scrollbar-thumb {
+    background: #bdc3c7;
+    border-radius: 4px;
+}
+
+pre::-webkit-scrollbar-thumb:hover {
+    background: #95a5a6;
+}

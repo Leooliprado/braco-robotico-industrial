@@ -1,119 +1,25 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8" />
     <title>Monitor de Comando JSON</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 20px;
-        }
-
-        h1 {
-            margin-bottom: 10px;
-        }
-
-        .container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        .json-box {
-            flex: 1;
-            min-width: 300px;
-            max-width: 500px;
-            background-color: #fff;
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-
-        .camera-box {
-            flex: 1;
-            min-width: 320px;
-            text-align: center;
-            background-color: #fff;
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-
-        .camera-box img {
-            width: 320px;
-            height: 240px;
-            border-radius: 8px;
-            border: 2px solid #ccc;
-        }
-
-        pre {
-            white-space: pre-wrap;
-            word-wrap: break-word;
-            background-color: #f0f0f0;
-            padding: 10px;
-            border-radius: 8px;
-            max-height: 400px;
-            overflow-y: auto;
-        }
-
-        #ultimaAtualizacao {
-            font-style: italic;
-            color: #555;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <h1>Monitor de Comando</h1>
-    <div class="container">
-        <div class="json-box">
-            <h2>Comando Atual:</h2>
-            <pre id="comando">Carregando...</pre>
-            <p>Última atualização: <span id="ultimaAtualizacao">--</span></p>
-        </div>
 
-        <div class="camera-box">
-            <h2>Câmera Ao Vivo</h2>
-            <img src="http://192.168.15.12:81/stream" alt="Stream da Câmera" />
+<body>
+    <div class="linhaFlex">
+        <button id="toggleGravar" class="gravar" onclick="mudaBotaoGravar()">GRAVAR</button>
+        <div class="container">
+
+            <div class="camera-box">
+                <h2>Visão do Robô</h2>
+                <img src="http://192.168.15.12:81/stream" alt="Stream da Câmera" />
+            </div>
         </div>
     </div>
 
-    <script>
-        // Variável para armazenar o último conteúdo
-        let ultimoConteudo = null;
-        
-        async function buscarComando() {
-            try {
-                console.log("Buscando comando...");
-                // Usando cache-busting com timestamp
-                const url = 'comando.json?' + new Date().getTime();
-                const res = await fetch(url);
-                
-                if (!res.ok) throw new Error(`Erro ${res.status}: ${res.statusText}`);
-                
-                const comando = await res.json();
-                console.log("Dados recebidos:", comando);
-                
-                document.getElementById('ultimaAtualizacao').textContent = new Date().toLocaleString();
-                
-                const conteudoAtual = JSON.stringify(comando, null, 2);
-                
-                if (conteudoAtual !== ultimoConteudo) {
-                    document.getElementById('comando').textContent = conteudoAtual;
-                    ultimoConteudo = conteudoAtual;
-                    console.log("Conteúdo atualizado!");
-                }
-                
-            } catch (error) {
-                console.error("Erro na requisição:", error);
-                document.getElementById('comando').textContent = 'Erro: ' + error.message;
-            } finally {
-                setTimeout(buscarComando, 1000);
-            }
-        }
-
-        document.addEventListener('DOMContentLoaded', buscarComando);
-    </script>
+    <script src="scripts.js"></script>
 </body>
+
 </html>
