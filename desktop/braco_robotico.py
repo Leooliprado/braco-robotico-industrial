@@ -3,37 +3,57 @@ import json
 import serial
 import time
 import threading
-
-
-
-# Inicializa porta serial
-ser = serial.Serial('/dev/ttyUSB0', 9600) # Windows: 'COM3', Linux: '/dev/ttyUSB0'
-time.sleep(2)
+import serial.tools.list_ports
 
 # Estado atual dos eixos
-# Estado atual
 estado = {
     'X': {'sentido': 'parado', 'passos': 0},
     'Y': {'sentido': 'parado', 'passos': 0},
     'Z': {'sentido': 'parado', 'passos': 0},
     'GA': {'sentido': 'parado', 'passos': 0},
-    'GA2': {'sentido': 'parado', 'agulo': 90}  # Servo começa no meio
+    'GA2': {'sentido': 'parado', 'agulo': 90}
 }
+
+# Função para encontrar a porta do Arduino Mega
+def encontrar_arduino():
+    while True:
+        portas = serial.tools.list_ports.comports()
+        for porta in portas:
+            if "Arduino" in porta.description or "/dev/ttyUSB0" in porta.device: # Windows: 'COM3', Linux: '/dev/ttyUSB0'
+                try:
+                    s = serial.Serial(porta.device, 9600, timeout=1)
+                    print(f"[INFO] Conectado ao Arduino em {porta.device}")
+                    time.sleep(2)  # Dá tempo para o Arduino reiniciar
+                    return s
+                except Exception as e:
+                    print(f"[ERRO] Falha ao conectar em {porta.device}: {e}")
+        print("[AVISO] Arduino não encontrado. Tentando novamente em 2 segundos...")
+        time.sleep(2)
+
+# Conexão inicial com Arduino
+ser = encontrar_arduino()
 
 # Função que envia comandos continuamente
 def enviar_loop():
+    global ser
     while True:
-        comando = {eixo: info for eixo, info in estado.items() if info['sentido'] != 'parado'}
-        if comando:
-            ser.write((json.dumps(comando) + "\n").encode())
-            print("Enviado:", comando)
-               # Escreve o comando em um arquivo txt
-            with open('comando.json', 'w') as f:
-                f.write(json.dumps(comando))
-            print("Comando salvo:", comando)
-        time.sleep(0.1)
+        try:
+            comando = {eixo: info for eixo, info in estado.items() if info['sentido'] != 'parado'}
+            if comando:
+                ser.write((json.dumps(comando) + "\n").encode())
+                print("[ENVIO]", comando)
+                with open('comando.json', 'w') as f:
+                    f.write(json.dumps(comando))
+            time.sleep(0.1)
+        except (serial.SerialException, OSError) as e:
+            print("[ERRO] Comunicação falhou. Tentando reconectar...")
+            try:
+                ser.close()
+            except:
+                pass
+            ser = encontrar_arduino()
 
-# Inicia thread para envio contínuo
+# Inicia thread de envio contínuo
 threading.Thread(target=enviar_loop, daemon=True).start()
 
 def rum_braco():
@@ -93,17 +113,6 @@ def rum_braco():
                     print(f"GA2 (servo) ângulo ajustado: {estado['GA2']['agulo']} graus")
 
 
-
-                # # L2 analógico (ABS_Z): diminui ângulo do servo
-                # elif evento.code == "ABS_Z":
-                #     valor = evento.state / 255.0
-                #     if valor > 0.1:
-                #         novo_angulo = int(estado['GA2']['agulo'] - valor * 5)
-                #         estado['GA2']['agulo'] = max(novo_angulo, 0)
-                #         estado['GA2']['sentido'] = 'menos'
-                #         print(f"GA2 diminuindo para {estado['GA2']['agulo']} graus")
-                #     else:
-                #         estado['GA2']['sentido'] = 'parado'
 
             elif evento.ev_type == "Key":
                 if evento.code == "BTN_TR" and evento.state == 1:
