@@ -1,5 +1,5 @@
 #include <AccelStepper.h>
-#include <ArduinoJson.h>  
+#include <ArduinoJson.h>
 #include <Servo.h>
 
 // Motores
@@ -8,13 +8,15 @@ AccelStepper motorY(AccelStepper::DRIVER, 60, 61);
 AccelStepper motorZ(AccelStepper::DRIVER, 46, 48);
 AccelStepper motorGA(AccelStepper::DRIVER, 26, 28);
 
-// Servo
-Servo servoGA2;  // GA2 no pino 11
+AccelStepper motorGA2(AccelStepper::HALF4WIRE, 4, 6, 5, 11);
+
+
+
 
 // Pinos de ENABLE
-#define X_ENABLE_PIN  38
-#define Y_ENABLE_PIN  56
-#define Z_ENABLE_PIN  62
+#define X_ENABLE_PIN 38
+#define Y_ENABLE_PIN 56
+#define Z_ENABLE_PIN 62
 #define GA_ENABLE_PIN 24
 
 String bufferSerial = "";
@@ -33,13 +35,24 @@ void setup() {
   digitalWrite(GA_ENABLE_PIN, LOW);
 
   // Configurações de movimento
-  motorX.setMaxSpeed(1000); motorX.setAcceleration(900);
-  motorY.setMaxSpeed(1000); motorY.setAcceleration(900);
-  motorZ.setMaxSpeed(1000); motorZ.setAcceleration(900);
-  motorGA.setMaxSpeed(1000); motorGA.setAcceleration(900);
+  motorX.setMaxSpeed(1000);
+  motorX.setAcceleration(900);
+  motorY.setMaxSpeed(1000);
+  motorY.setAcceleration(900);
+  motorZ.setMaxSpeed(1000);
+  motorZ.setAcceleration(900);
+  motorGA.setMaxSpeed(1000);
+  motorGA.setAcceleration(900);
 
-  // Inicializa servo no pino 11 (Servo0 RAMPS)
-  servoGA2.attach(11);
+  motorGA2.setMaxSpeed(500);
+  motorGA2.setAcceleration(100);
+
+  motorGA2.setMaxSpeed(500);      // Velocidade máxima
+  motorGA2.setAcceleration(100);  // Aceleração
+
+
+ 
+
 
   Serial.println("Envie JSON para controlar os motores e o servo.");
 }
@@ -50,6 +63,9 @@ void loop() {
   motorY.run();
   motorZ.run();
   motorGA.run();
+
+  motorGA2.run();
+   motorGA2.moveTo(2048); // Vai girar 1 volta para frente
 
   // Recebe JSON
   while (Serial.available()) {
@@ -65,7 +81,7 @@ void loop() {
         moverMotor(doc, "Y", motorY);
         moverMotor(doc, "Z", motorZ);
         moverMotor(doc, "GA", motorGA);
-        moverServo(doc, "GA2", servoGA2);
+        moverMotorGA2(doc);
         Serial.println("Comando recebido.");
       }
       bufferSerial = "";
@@ -98,23 +114,27 @@ void moverMotor(JsonDocument& doc, const char* nome, AccelStepper& motor) {
   Serial.println(" passos");
 }
 
-void moverServo(JsonDocument& doc, const char* nome, Servo& servo) {
-  if (!doc.containsKey(nome)) return;
 
-  // Lê o campo "agulo" (ângulo) do JSON
-  int angulo = doc[nome]["agulo"];
 
-  // Limita o ângulo entre 0 e 180 para segurança
-  angulo = constrain(angulo, 0, 180);
 
-  servo.write(angulo);
 
-  Serial.print("Servo ");
-  Serial.print(nome);
-  Serial.print(" -> angulo: ");
-  Serial.println(angulo);
+void moverMotorGA2(JsonDocument& doc) {
+  if (!doc.containsKey("GA2")) return;
+
+  const char* sentido = doc["GA2"]["sentido"];
+  int valor = doc["GA2"]["passos"];
+  int passos = constrain(valor, 0, 100) * 8;
+
+  if (strcmp(sentido, "tras") == 0) passos = -passos;
+
+  motorGA2.moveTo(motorGA2.currentPosition() + passos);
+
+  Serial.print("Motor GA2 -> ");
+  Serial.print(sentido);
+  Serial.print(" ");
+  Serial.print(abs(passos));
+  Serial.println(" passos");
 }
-
 
 
 /*
@@ -130,5 +150,3 @@ void moverServo(JsonDocument& doc, const char* nome, Servo& servo) {
 
 
 */
-
-
