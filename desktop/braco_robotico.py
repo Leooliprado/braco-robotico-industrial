@@ -105,12 +105,28 @@ def rum_braco():
 
             
                 # R2 analógico (ABS_RZ): controla diretamente o ângulo
+           # R2 analógico (ABS_RZ): GA2 para trás
                 elif evento.code == "ABS_RZ":
-                    valor = evento.state / 255.0
-                    angulo = int((1 - valor) * 180)  # R2 controla diretamente o ângulo
-                    estado['GA2']['agulo'] = max(0, min(angulo, 180))
-                    estado['GA2']['sentido'] = 'ajustando'
-                    print(f"GA2 (servo) ângulo ajustado: {estado['GA2']['agulo']} graus")
+                    valor = evento.state / 255.0  # 0.0 a 1.0
+                    if valor > 0.05:
+                        passos = int(100 * valor)
+                        estado['GA2']['sentido'] = 'tras'
+                        estado['GA2']['passos'] = passos
+                    else:
+                        estado['GA2']['sentido'] = 'parado'
+                        estado['GA2']['passos'] = 0
+
+                # L2 analógico (ABS_Z): GA2 para frente
+                elif evento.code == "ABS_Z":
+                    valor = evento.state / 255.0  # 0.0 a 1.0
+                    if valor > 0.05:
+                        passos = int(100 * valor)
+                        estado['GA2']['sentido'] = 'frente'
+                        estado['GA2']['passos'] = passos
+                    else:
+                        estado['GA2']['sentido'] = 'parado'
+                        estado['GA2']['passos'] = 0
+
 
 
 

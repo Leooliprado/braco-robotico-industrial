@@ -44,14 +44,12 @@ void setup() {
   motorGA.setMaxSpeed(1000);
   motorGA.setAcceleration(900);
 
-  motorGA2.setMaxSpeed(500);
-  motorGA2.setAcceleration(100);
-
-  motorGA2.setMaxSpeed(500);      // Velocidade máxima
-  motorGA2.setAcceleration(100);  // Aceleração
+  motorGA2.setMaxSpeed(2000);      // velocidade máxima (ajuste conforme motor e driver)
+  motorGA2.setAcceleration(1000);  // aceleração (mais alto = responde mais rápido)
 
 
- 
+
+
 
 
   Serial.println("Envie JSON para controlar os motores e o servo.");
@@ -65,7 +63,7 @@ void loop() {
   motorGA.run();
 
   motorGA2.run();
-   motorGA2.moveTo(2048); // Vai girar 1 volta para frente
+  // motorGA2.moveTo(2048); // Vai girar 1 volta para frente
 
   // Recebe JSON
   while (Serial.available()) {
