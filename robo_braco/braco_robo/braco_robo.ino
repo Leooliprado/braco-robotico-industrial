@@ -8,7 +8,7 @@ AccelStepper motorY(AccelStepper::DRIVER, 60, 61);
 AccelStepper motorZ(AccelStepper::DRIVER, 46, 48);
 AccelStepper motorGA(AccelStepper::DRIVER, 26, 28);
 
-AccelStepper motorGA2(AccelStepper::HALF4WIRE, 4, 6, 5, 11);
+AccelStepper motorGA2(AccelStepper::FULL4WIRE, 4, 6, 5, 11);
 
 
 
@@ -44,8 +44,8 @@ void setup() {
   motorGA.setMaxSpeed(1000);
   motorGA.setAcceleration(900);
 
-  motorGA2.setMaxSpeed(2000);      // velocidade máxima (ajuste conforme motor e driver)
-  motorGA2.setAcceleration(1000);  // aceleração (mais alto = responde mais rápido)
+  motorGA2.setMaxSpeed(350);      // velocidade máxima
+  motorGA2.setAcceleration(150);  // aceleração 
 
 
 
@@ -121,7 +121,7 @@ void moverMotorGA2(JsonDocument& doc) {
 
   const char* sentido = doc["GA2"]["sentido"];
   int valor = doc["GA2"]["passos"];
-  int passos = constrain(valor, 0, 100) * 8;
+  int passos = constrain(valor, 0, 100) * 8; // aumente a multiplicação para mais força
 
   if (strcmp(sentido, "tras") == 0) passos = -passos;
 
