@@ -1,0 +1,20 @@
+[
+  {
+    "timestamp": "2025-07-28 14:12:07.732490",
+    "comando": {
+      "Y": {
+        "sentido": "frente",
+        "passos": 7
+      }
+    }
+  },
+  {
+    "timestamp": "2025-07-28 14:12:07.834613",
+    "comando": {
+      "Y": {
+        "sentido": "frente",
+        "passos": 6
+      }
+    }
+  }
+]

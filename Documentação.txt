@@ -1,0 +1,47 @@
+=-=-=-=-=-=-=-=-=-=-=-= Rota de Gravar =-=-=-=-=-=-=-=-=-=-=-=
+
+http://localhost:5000/gravar_data_comando
+
+
+O que retorna:
+
+{
+  "data_hora": "2025-07-28 14:28:35",
+  "status": "gravacao iniciada com sucesso"
+}
+
+
+
+
+
+
+
+
+=-=-=-=-=-=-=-=-=-=-=-= Rota de Salvar gravação =-=-=-=-=-=-=-=-=-=-=-=
+
+http://localhost:5000/salvar_comando
+
+
+
+O que retorna:
+
+
+{
+  "arquivo_salvo": "historico_de_comandos/comando_20250728_142835.json",
+  "status": "gravacao salva com sucesso"
+}
+
+
+
+Erros:
+
+Numero do erro: 404
+{"status": "erro", "mensagem": "Arquivo comando.json não encontrado"} 
+
+Numero do erro: 400
+{"status": "erro", "mensagem": "Nenhuma data registrada encontrada"}
+
+Numero do erro: 500
+{"status": "erro", "mensagem": str(e)}
+
+
