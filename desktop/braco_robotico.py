@@ -4,6 +4,7 @@ import serial
 import time
 import threading
 import serial.tools.list_ports
+from datetime import datetime
 
 # Estado atual dos eixos
 estado = {
@@ -33,18 +34,45 @@ def encontrar_arduino():
 # Conexão inicial com Arduino
 ser = encontrar_arduino()
 
+
+# Limpa o arquivo comando.json ao iniciar o programa
+with open('comando.json', 'w') as f:
+    f.write('[]')
+
 # Função que envia comandos continuamente
 def enviar_loop():
     global ser
+    comandos_salvos = []
+
     while True:
         try:
             comando = {eixo: info for eixo, info in estado.items() if info['sentido'] != 'parado'}
             if comando:
+                timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S.%f')
+                comando_com_tempo = {
+                    "timestamp": timestamp,
+                    "comando": comando
+                }
+
                 ser.write((json.dumps(comando) + "\n").encode())
-                print("[ENVIO]", comando)
+                print("[ENVIO]", comando_com_tempo)
+
+                # Carrega os comandos anteriores (se existirem)
+                try:
+                    with open('comando.json', 'r') as f:
+                        comandos_salvos = json.load(f)
+                except (FileNotFoundError, json.JSONDecodeError):
+                    comandos_salvos = []
+
+                # Adiciona o novo comando com tempo
+                comandos_salvos.append(comando_com_tempo)
+
+                # Salva todos os comandos no arquivo
                 with open('comando.json', 'w') as f:
-                    f.write(json.dumps(comando))
+                    json.dump(comandos_salvos, f, indent=2)
+
             time.sleep(0.1)
+
         except (serial.SerialException, OSError) as e:
             print("[ERRO] Comunicação falhou. Tentando reconectar...")
             try:
@@ -55,6 +83,7 @@ def enviar_loop():
 
 # Inicia thread de envio contínuo
 threading.Thread(target=enviar_loop, daemon=True).start()
+
 
 def rum_braco():
     while True:

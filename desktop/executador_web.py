@@ -6,6 +6,7 @@ import socketserver
 from PyQt5.QtWidgets import QApplication, QMainWindow
 from PyQt5.QtWebEngineWidgets import QWebEngineView
 from PyQt5.QtCore import QUrl
+from functools import partial 
 
 PORTA = 8080
 
@@ -22,9 +23,12 @@ class ServidorThread(threading.Thread):
         # Caminho do script atual
         pasta_script = os.path.dirname(os.path.abspath(__file__))
         diretorio_web = os.path.abspath(os.path.join(pasta_script, '..', 'web'))
-        os.chdir(diretorio_web)
 
-        Handler = http.server.SimpleHTTPRequestHandler
+        # NÃO use mais os.chdir(diretorio_web)
+
+        # Define o handler com o diretório da web corretamente
+        Handler = partial(http.server.SimpleHTTPRequestHandler, directory=diretorio_web)
+
         with TCPServerComReuso(("", self.porta), Handler) as httpd:
             self.httpd = httpd
             print(f"Servidor rodando em http://localhost:{self.porta}")
