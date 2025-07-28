@@ -106,10 +106,10 @@ def rum_braco():
             
                 # R2 analógico (ABS_RZ): controla diretamente o ângulo
            # R2 analógico (ABS_RZ): GA2 para trás
-                elif evento.code == "ABS_RZ":
+                elif evento.code == "ABS_Z":
                     valor = evento.state / 255.0  # 0.0 a 1.0
                     if valor > 0.05:
-                        passos = int(100 * valor)
+                        passos = int(10 * valor)
                         estado['GA2']['sentido'] = 'tras'
                         estado['GA2']['passos'] = passos
                     else:
@@ -117,10 +117,10 @@ def rum_braco():
                         estado['GA2']['passos'] = 0
 
                 # L2 analógico (ABS_Z): GA2 para frente
-                elif evento.code == "ABS_Z":
+                elif evento.code == "ABS_RZ":
                     valor = evento.state / 255.0  # 0.0 a 1.0
                     if valor > 0.05:
-                        passos = int(100 * valor)
+                        passos = int(10 * valor)
                         estado['GA2']['sentido'] = 'frente'
                         estado['GA2']['passos'] = passos
                     else:
