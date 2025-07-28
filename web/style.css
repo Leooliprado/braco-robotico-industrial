@@ -1,9 +1,14 @@
+html {
+    height: 80%;
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f0f2f5;
     margin: 0;
     padding: 20px;
     color: #333;
+    height: 100%;
 }
 
 h1 {
@@ -15,15 +20,22 @@ h1 {
 
 .linhaFlex {
     display: flex;
+    height: 100%;
 }
 
 .container {
     width: 70%;
-    display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     gap: 25px;
     justify-content: center;
     margin: 0 auto;
+    height: 100%;
+}
+
+.esquerda {
+    width: 25% !important;
+    display: flex;
+    flex-direction: column;
 }
 
 .json-box {
@@ -41,15 +53,13 @@ h1 {
 }
 
 .camera-box {
-    flex: 1;
-    height: 50vh;
-    min-width: 320px;
     text-align: center;
     background-color: #fff;
     border-radius: 12px;
     padding: 25px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
+    height: 100%;
 }
 
 .camera-box:hover {
@@ -69,6 +79,25 @@ h1 {
     border-radius: 8px;
     border: 2px solid #e0e0e0;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.historicoAcoes {
+    text-align: center;
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    height: 100%;
+}
+
+.historicoAcoes:hover {
+    transform: translateY(-5px);
+}
+
+.historicoAcoes h2 {
+    color: #2c3e50;
+    margin-bottom: 15px;
 }
 
 pre {
@@ -94,9 +123,10 @@ pre {
 }
 
 /* Estilos do botão */
-#toggleGravar {
+.botaoAcao {
     display: block;
-    width: 25%;
+    height: 100%;
+    width: 100%;
     padding: 12px 20px;
     border: none;
     border-radius: 8px;
@@ -117,6 +147,16 @@ pre {
     box-shadow: 0 2px 10px rgba(46, 204, 113, 0.3);
 }
 
+.historico {
+    background-color: #004aeb;
+    color: white;
+}
+
+.historico:hover {
+    background-color: #0239af;
+    box-shadow: 0 2px 10px rgba(46, 204, 113, 0.3);
+}
+
 .parar {
     background-color: #e74c3c;
     color: white;
@@ -124,6 +164,15 @@ pre {
 
 .parar:hover {
     background-color: #c0392b;
+    box-shadow: 0 2px 10px rgba(231, 76, 60, 0.3);
+}
+.camera {
+    background-color: #ffae00;
+    color: white;
+}
+
+.camera:hover {
+    background-color: #d39000;
     box-shadow: 0 2px 10px rgba(231, 76, 60, 0.3);
 }
 

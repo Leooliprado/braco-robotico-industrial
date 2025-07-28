@@ -45,3 +45,28 @@ function mudaBotaoGravar() {
         botao.innerHTML = 'GRAVAR'
     }
 }
+function verHistorico() {
+    if (document.querySelector('.camera-box').getAttribute('class').includes('active')) {
+        document.querySelector('.historicoAcoes').style.display = '';
+        document.querySelector('.camera-box').style.display = 'none';
+        document.querySelector('.historicoAcoes').classList.add('active')
+        document.querySelector('.camera-box').classList.remove('active')
+    } else {
+        document.querySelector('.historicoAcoes').style.display = 'none';
+        document.querySelector('.camera-box').style.display = '';
+        document.querySelector('.historicoAcoes').classList.remove('active')
+        document.querySelector('.camera-box').classList.add('active')
+    }
+
+    const botao = document.getElementById('verHistorico')
+    if (botao.getAttribute('class').includes('historico')) {
+        botao.classList.remove('historico');
+        botao.classList.add('camera');
+        botao.innerHTML = 'CÂMERA';
+    } else {
+        botao.classList.remove('camera');
+        botao.classList.add('historico');
+        botao.innerHTML = 'HISTÓRICO';
+    }
+
+}

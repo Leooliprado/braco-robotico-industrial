@@ -9,12 +9,21 @@
 
 <body>
     <div class="linhaFlex">
-        <button id="toggleGravar" class="gravar" onclick="mudaBotaoGravar()">GRAVAR</button>
+        <div class="container esquerda">
+            <button id="toggleGravar" class="gravar botaoAcao" onclick="mudaBotaoGravar()">GRAVAR</button>
+            <button id="verHistorico" class="historico botaoAcao" onclick="verHistorico()">HISTÓRICO</button>
+        </div>
         <div class="container">
 
-            <div class="camera-box">
+            <div class="camera-box active">
                 <h2>Visão do Robô</h2>
                 <img src="http://192.168.15.12:81/stream" alt="Stream da Câmera" />
+            </div>
+            <div class="historicoAcoes" style="display: none;">
+                <h2>Histórico de Ações</h2>
+                <div id="listaHistorico">
+
+                </div>
             </div>
         </div>
     </div>
