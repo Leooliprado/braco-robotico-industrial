@@ -1,17 +1,16 @@
-from flask import Flask, jsonify
-import os
-import shutil
+import serial
+import serial.tools.list_ports
+import time
 from datetime import datetime
-
-app = Flask(__name__)
-
-from flask import Flask, jsonify
 import os
-import shutil
-from datetime import datetime
 import json
+from flask import Flask, jsonify
+from braco_robotico import encontrar_arduino
+
 
 app = Flask(__name__)
+
+
 
 CAMINHO_COMANDO = 'comando.json'
 DIRETORIO_HISTORICO = 'historico_de_comandos'
@@ -90,31 +89,101 @@ def salvar_comando():
 
 
 
-@app.route('/listar_comandos', methods=['GET'])
-def listar_comandos():
+@app.route('/listar_comandos_gravados', methods=['GET'])
+def listar_comandos_gravados():
     try:
         arquivos = os.listdir(DIRETORIO_HISTORICO)
-        jsons = [f for f in arquivos if f.endswith('.json')]
-        return jsonify({"status": "sucesso", "arquivos": jsons})
+        jsons = [f for f in arquivos if f.endswith('.json') and f.startswith('comando_')]
+        
+        # Função para extrair a data do nome do arquivo
+        def extrair_data(nome_arquivo):
+            try:
+                # Formato esperado: comando_YYYYMMDD_HHMMSS.json
+                partes = nome_arquivo.split('_')
+                data_str = partes[1] + '_' + partes[2].split('.')[0]
+                return datetime.strptime(data_str, '%Y%m%d_%H%M%S')
+            except:
+                return datetime.min  # Retorna data mínima se não conseguir parsear
+        
+        # Ordena os arquivos por data (do mais recente para o mais antigo)
+        jsons_ordenados = sorted(jsons, key=extrair_data, reverse=True)
+        
+        return jsonify({
+            "status": "sucesso",
+            "arquivos": jsons_ordenados,
+            "quantidade": len(jsons_ordenados)
+        })
     except Exception as e:
+        return jsonify({
+            "status": "erro",
+            "mensagem": str(e),
+            "arquivos": [],
+            "quantidade": 0
+        }), 500
+
+
+
+
+
+
+
+@app.route('/executar_comandos_gravados/<nome_arquivo>', methods=['GET'])
+def executar_comandos_gravados(nome_arquivo):
+    try:
+        # Estabelece conexão serial
+        ser = encontrar_arduino()
+        
+        caminho_arquivo = os.path.join(DIRETORIO_HISTORICO, nome_arquivo)
+        
+        if not os.path.exists(caminho_arquivo):
+            return jsonify({"status": "erro", "mensagem": "Arquivo não encontrado"}), 404
+        
+        with open(caminho_arquivo, 'r') as f:
+            comandos = json.load(f)
+        
+        if not comandos:
+            return jsonify({"status": "erro", "mensagem": "Arquivo vazio"}), 400
+        
+        # Ordena os comandos por timestamp
+        comandos_ordenados = sorted(comandos, key=lambda x: x['timestamp'])
+        
+        # Envia o primeiro comando
+        primeiro_comando = comandos_ordenados[0]
+        ser.write((json.dumps(primeiro_comando['comando']) + "\n").encode())
+        print(f"[REPLAY] Enviado: {primeiro_comando}")
+        ultimo_tempo = datetime.strptime(primeiro_comando['timestamp'], '%Y-%m-%d %H:%M:%S.%f')
+        
+        # Processa os demais comandos
+        for comando in comandos_ordenados[1:]:
+            # Calcula o intervalo
+            tempo_atual = datetime.strptime(comando['timestamp'], '%Y-%m-%d %H:%M:%S.%f')
+            delta = (tempo_atual - ultimo_tempo).total_seconds()
+            
+            # Espera o intervalo
+            if delta > 0:
+                time.sleep(delta)
+            
+            # Envia o comando
+            ser.write((json.dumps(comando['comando']) + "\n").encode())
+            print(f"[REPLAY] Enviado: {comando}")
+            ultimo_tempo = tempo_atual
+        
+        ser.close()
+        return jsonify({"status": "sucesso", "mensagem": f"Comandos do arquivo {nome_arquivo} executados com sucesso"})
+    
+    except Exception as e:
+        if 'ser' in locals():
+            ser.close()
         return jsonify({"status": "erro", "mensagem": str(e)}), 500
+
     
 
 
 
 
-@app.route('/obter_comando/<nome_arquivo>', methods=['GET'])
-def obter_comando(nome_arquivo):
-    caminho = os.path.join(DIRETORIO_HISTORICO, nome_arquivo)
-    if not os.path.isfile(caminho):
-        return jsonify({"status": "erro", "mensagem": "Arquivo não encontrado"}), 404
 
-    try:
-        with open(caminho, 'r') as f:
-            conteudo = f.read()
-        return jsonify({"status": "sucesso", "conteudo": conteudo})
-    except Exception as e:
-        return jsonify({"status": "erro", "mensagem": str(e)}), 500
+
+
 
 
 def start_flask():

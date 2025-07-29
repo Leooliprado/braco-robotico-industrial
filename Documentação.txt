@@ -1,4 +1,4 @@
-=-=-=-=-=-=-=-=-=-=-=-= Rota de Gravar =-=-=-=-=-=-=-=-=-=-=-=
+=-=-=-=-=-=-=-=-=-=-=-= Rota de Gravar (GET) =-=-=-=-=-=-=-=-=-=-=-=
 
 http://localhost:5000/gravar_data_comando
 
@@ -17,7 +17,7 @@ O que retorna:
 
 
 
-=-=-=-=-=-=-=-=-=-=-=-= Rota de Salvar gravação =-=-=-=-=-=-=-=-=-=-=-=
+=-=-=-=-=-=-=-=-=-=-=-= Rota de Salvar Gravação (GET) =-=-=-=-=-=-=-=-=-=-=-=
 
 http://localhost:5000/salvar_comando
 
@@ -45,3 +45,79 @@ Numero do erro: 500
 {"status": "erro", "mensagem": str(e)}
 
 
+
+
+=-=-=-=-=-=-=-=-=-=-=-= Rota de Listar Comandos Gravados (GET) =-=-=-=-=-=-=-=-=-=-=-=
+
+
+
+
+http://localhost:5000/listar_comandos_gravados
+
+
+O que retorna:
+
+{
+  "arquivos": [
+    "comando_20250729_140003.json",
+    "comando_20250729_134930.json",
+    "comando_20250729_134149.json",
+    "comando_20250729_133602.json",
+    "comando_20250729_133310.json",
+    "comando_20250729_131609.json",
+    "comando_20250728_144314.json",
+    "comando_20250728_142835.json",
+    "comando_20250728_142635.json",
+    "comando_20250728_142547.json",
+    "comando_20250728_142002.json",
+    "comando_20250728_141540.json",
+    "comando_20250728_141335.json",
+    "comando_20250728_141228.json",
+    "comando_20250728_141205.json"
+  ],
+  "quantidade": 15,
+  "status": "sucesso"
+}
+
+
+
+Erros:
+
+Numero do erro: 500
+"status": "erro","mensagem": str(e),"arquivos": [],"quantidade": 0
+
+
+
+
+=-=-=-=-=-=-=-=-=-=-=-= Rota de Executar Comandos Gravados (GET) =-=-=-=-=-=-=-=-=-=-=-=
+
+http://localhost:5000/executar_comandos_gravados/<nome_arquivo>
+
+
+Ex que deve ser enviado:
+http://localhost:5000/executar_comandos_gravados/comando_20250729_140003.json
+
+
+
+comando_20250729_140003.json é o arquivo obtido na  "Rota de Listar Comandos Gravados"
+
+
+O que retorna:
+
+{
+  "mensagem": "Comandos do arquivo comando_20250729_140003.json executados com sucesso",
+  "status": "sucesso"
+}
+
+
+Erros:
+
+
+Numero do erro: 404
+"status": "erro", "mensagem": "Arquivo não encontrado"
+
+Numero do erro: 400
+"status": "erro", "mensagem": "Arquivo vazio"
+
+Numero do erro: 500
+"status": "erro", "mensagem": str(e)

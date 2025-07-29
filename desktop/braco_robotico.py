@@ -22,10 +22,11 @@ def encontrar_arduino():
         for porta in portas:
             if "Arduino" in porta.description or "/dev/ttyUSB0" in porta.device: # Windows: 'COM3', Linux: '/dev/ttyUSB0'
                 try:
-                    s = serial.Serial(porta.device, 9600, timeout=1)
+                    ser = serial.Serial(porta.device, 9600, timeout=1)
                     print(f"[INFO] Conectado ao Arduino em {porta.device}")
                     time.sleep(2)  # Dá tempo para o Arduino reiniciar
-                    return s
+                    return ser
+
                 except Exception as e:
                     print(f"[ERRO] Falha ao conectar em {porta.device}: {e}")
         print("[AVISO] Arduino não encontrado. Tentando novamente em 2 segundos...")
