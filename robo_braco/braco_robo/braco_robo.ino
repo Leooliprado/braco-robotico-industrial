@@ -8,7 +8,7 @@ AccelStepper motorY(AccelStepper::DRIVER, 60, 61);
 AccelStepper motorZ(AccelStepper::DRIVER, 46, 48);
 AccelStepper motorGA(AccelStepper::DRIVER, 26, 28);
 
-AccelStepper motorGA2(AccelStepper::FULL4WIRE, 4, 6, 5, 11);
+AccelStepper motorGA2(AccelStepper::HALF4WIRE, 4, 6, 5, 11);
 
 
 
