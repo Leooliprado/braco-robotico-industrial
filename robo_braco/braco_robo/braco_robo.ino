@@ -19,6 +19,14 @@ AccelStepper motorGA2(AccelStepper::HALF4WIRE, 4, 6, 5, 11);
 #define Z_ENABLE_PIN 62
 #define GA_ENABLE_PIN 24
 
+// limete da GA e o X para não estragar o fios
+//150° no codigo. no robo 150°
+#define MAX_PASSOS_GA 853 
+#define MIN_PASSOS_GA -853
+// 360° no codigo. com a engrenagem planetaria é 180°
+#define MAX_PASSOS_X 2048  
+#define MIN_PASSOS_X -2048
+
 String bufferSerial = "";
 
 void setup() {
@@ -89,6 +97,7 @@ void loop() {
   }
 }
 
+
 void moverMotor(JsonDocument& doc, const char* nome, AccelStepper& motor) {
   if (!doc.containsKey(nome)) return;
 
@@ -101,7 +110,29 @@ void moverMotor(JsonDocument& doc, const char* nome, AccelStepper& motor) {
     passos = -passos;
   }
 
-  motor.moveTo(motor.currentPosition() + passos);
+  long novaPosicao = motor.currentPosition() + passos;
+
+  if (strcmp(nome, "GA") == 0) {
+    if (novaPosicao > MAX_PASSOS_GA) {
+      novaPosicao = MAX_PASSOS_GA;
+      Serial.println("GA atingiu o limite de +180°");
+    } else if (novaPosicao < MIN_PASSOS_GA) {
+      novaPosicao = MIN_PASSOS_GA;
+      Serial.println("GA atingiu o limite de -180°");
+    }
+    motor.moveTo(novaPosicao);
+  } else if (strcmp(nome, "X") == 0) {
+      if (novaPosicao > MAX_PASSOS_X) {
+        novaPosicao = MAX_PASSOS_X;
+        Serial.println("X atingiu o limite de +350°");
+      } else if (novaPosicao < MIN_PASSOS_X) {
+        novaPosicao = MIN_PASSOS_X;
+        Serial.println("X atingiu o limite de -350°");
+      }
+      motor.moveTo(novaPosicao);
+  } else {
+    motor.moveTo(novaPosicao);
+  }
 
   Serial.print("Motor ");
   Serial.print(nome);
@@ -111,7 +142,6 @@ void moverMotor(JsonDocument& doc, const char* nome, AccelStepper& motor) {
   Serial.print(abs(passos));
   Serial.println(" passos");
 }
-
 
 
 
