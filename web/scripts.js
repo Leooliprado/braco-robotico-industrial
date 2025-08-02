@@ -39,10 +39,12 @@ function mudaBotaoGravar() {
         botao.classList.remove('gravar')
         botao.classList.add('parar')
         botao.innerHTML = 'PARAR'
+        gravarComando();
     } else {
         botao.classList.remove('parar')
         botao.classList.add('gravar')
-        botao.innerHTML = 'GRAVAR'
+        botao.innerHTML = 'GRAVAR';
+        salvarComando();
     }
 }
 function verHistorico() {
@@ -54,8 +56,8 @@ function verHistorico() {
     } else {
         document.querySelector('.historicoAcoes').style.display = 'none';
         document.querySelector('.camera-box').style.display = '';
-        document.querySelector('.historicoAcoes').classList.remove('active')
-        document.querySelector('.camera-box').classList.add('active')
+        document.querySelector('.historicoAcoes').classList.remove('active');
+        document.querySelector('.camera-box').classList.add('active');
     }
 
     const botao = document.getElementById('verHistorico')
@@ -67,6 +69,28 @@ function verHistorico() {
         botao.classList.remove('camera');
         botao.classList.add('historico');
         botao.innerHTML = 'HISTÓRICO';
+        getHistoricoComandos();
     }
 
+}
+function gravarComando() {
+    fetch('http://localhost:5000/gravar_data_comando').then(data => window.alert(data));
+}
+function salvarComando() {
+    fetch('http://localhost:5000/salvar_comando').then(data => window.alert(data));
+}
+function listaHistoricoComandos(dados, quantidade) {
+    const lista = document.querySelector('#listaHistorico');
+    document.querySelector('#quantidadeHistorico').innerHTML = quantidade;
+    lista.innerHTML = '';
+    for (let dado of dados) {
+        const td = document.createElement('div');
+        td.id = dado;
+        td.innerHTML = dado;
+        td.className = 'comandoSelecionar';
+        lista.append(td);
+    }
+}
+function getHistoricoComandos() {
+    fetch('http://localhost:5000/listar_comandos_gravados').then(data => listaHistoricoComandos(data.arquivos, data.quantidade));
 }

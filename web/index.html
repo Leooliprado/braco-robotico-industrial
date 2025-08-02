@@ -11,7 +11,7 @@
     <div class="linhaFlex">
         <div class="container esquerda">
             <button id="toggleGravar" class="gravar botaoAcao" onclick="mudaBotaoGravar()">GRAVAR</button>
-            <button id="verHistorico" class="historico botaoAcao" onclick="verHistorico()">HISTÓRICO</button>
+            <button id="verHistorico" class="camera botaoAcao" onclick="verHistorico()">CÂMERA</button>
         </div>
         <div class="container">
 
@@ -21,6 +21,10 @@
             </div>
             <div class="historicoAcoes" style="display: none;">
                 <h2>Histórico de Ações</h2>
+                <h3 style="text-align: left;">QUANTIDADE DE COMANDOS: <span id="quantidadeHistorico">
+                    </span>
+                    <hr>
+                </h3>
                 <div id="listaHistorico">
 
                 </div>
