@@ -91,6 +91,12 @@ function listaHistoricoComandos(dados, quantidade) {
         lista.append(td);
     }
 }
+
+
 function getHistoricoComandos() {
-    fetch('http://localhost:5000/listar_comandos_gravados').then(data => listaHistoricoComandos(data.arquivos, data.quantidade));
+    fetch('http://localhost:5000/listar_comandos_gravados')
+        .then(response => response.json())  // <-- necessário
+        .then(data => listaHistoricoComandos(data.arquivos, data.quantidade))
+        .catch(error => console.error('Erro ao buscar histórico:', error));
 }
+

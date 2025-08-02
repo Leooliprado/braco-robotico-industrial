@@ -6,10 +6,11 @@ import os
 import json
 from flask import Flask, jsonify
 from braco_robotico import encontrar_arduino
+from flask_cors import CORS  # ADICIONE ISSO
 
 
 app = Flask(__name__)
-
+CORS(app) 
 
 
 CAMINHO_COMANDO = 'comando.json'

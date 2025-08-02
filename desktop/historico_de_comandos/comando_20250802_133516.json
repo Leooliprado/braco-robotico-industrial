@@ -1,0 +1,38 @@
+[
+  {
+    "timestamp": "2025-08-02 13:35:31.231873",
+    "comando": {
+      "X": {
+        "sentido": "tras",
+        "passos": 6
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-02 13:35:31.332684",
+    "comando": {
+      "X": {
+        "sentido": "tras",
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-02 13:35:31.433513",
+    "comando": {
+      "X": {
+        "sentido": "tras",
+        "passos": 8
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-02 13:35:31.834882",
+    "comando": {
+      "X": {
+        "sentido": "frente",
+        "passos": 9
+      }
+    }
+  }
+]
