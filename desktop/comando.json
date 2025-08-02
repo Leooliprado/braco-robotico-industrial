@@ -1,1 +1,71 @@
-[]
+[
+  {
+    "timestamp": "2025-08-02 13:51:18.453374",
+    "comando": {
+      "Y": {
+        "sentido": "frente",
+        "passos": 6
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-02 13:51:18.554137",
+    "comando": {
+      "Y": {
+        "sentido": "frente",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "_data_registro_": "2025-08-02 13:51:35"
+  },
+  {
+    "timestamp": "2025-08-02 13:51:37.891735",
+    "comando": {
+      "Y": {
+        "sentido": "frente",
+        "passos": 8
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-02 13:51:37.992421",
+    "comando": {
+      "Y": {
+        "sentido": "frente",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-02 13:51:38.093355",
+    "comando": {
+      "Y": {
+        "sentido": "frente",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-02 13:51:40.899816",
+    "comando": {
+      "Y": {
+        "sentido": "tras",
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-02 13:51:41.000837",
+    "comando": {
+      "Y": {
+        "sentido": "tras",
+        "passos": 10
+      }
+    }
+  },
+  {
+    "_data_registro_": "2025-08-02 13:51:41"
+  }
+]
