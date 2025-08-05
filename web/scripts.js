@@ -73,12 +73,7 @@ function verHistorico() {
     }
 
 }
-function gravarComando() {
-    fetch('http://localhost:5000/gravar_data_comando').then(data => window.alert(data));
-}
-function salvarComando() {
-    fetch('http://localhost:5000/salvar_comando').then(data => window.alert(data));
-}
+
 function listaHistoricoComandos(dados, quantidade) {
     const lista = document.querySelector('#listaHistorico');
     document.querySelector('#quantidadeHistorico').innerHTML = quantidade;
@@ -86,17 +81,91 @@ function listaHistoricoComandos(dados, quantidade) {
     for (let dado of dados) {
         const td = document.createElement('div');
         td.id = dado;
-        td.innerHTML = dado;
+        td.innerHTML = formatarNomeArquivo(dado);
         td.className = 'comandoSelecionar';
+        td.onclick = function () {
+            executaComandoGravado(this)
+        };
         lista.append(td);
     }
 }
 
 
+
+
+function formatarNomeArquivo(nomeArquivo) {
+    // Remove a extensão .json
+    const base = nomeArquivo.replace('.json', '');
+
+    // Extrai partes do nome
+    const [prefixo, dataStr, horaStr] = base.split('_');
+
+    // Formata data
+    const ano = dataStr.slice(0, 4);
+    const mes = dataStr.slice(4, 6);
+    const dia = dataStr.slice(6, 8);
+    const dataFormatada = `${dia}/${mes}/${ano}`;
+
+    // Formata hora
+    const hora = horaStr.slice(0, 2);
+    const minuto = horaStr.slice(2, 4);
+    const segundo = horaStr.slice(4, 6);
+    const horaFormatada = `${hora}:${minuto}:${segundo}`;
+
+    return `${prefixo}: ${dataFormatada} ${horaFormatada}`;
+}
+/////////////////////// SERVER /////////////////////////////////
+function executaComandoGravado(comando) {
+    fetch('http://localhost:5000/executar_comandos_gravados/' + comando.id).then(data => window.alert(data));
+}
 function getHistoricoComandos() {
     fetch('http://localhost:5000/listar_comandos_gravados')
         .then(response => response.json())  // <-- necessário
         .then(data => listaHistoricoComandos(data.arquivos, data.quantidade))
         .catch(error => console.error('Erro ao buscar histórico:', error));
-}
 
+    //TESTE ABAIXO
+
+    // const data = {
+    //     "arquivos": [
+    //         "comando_20250729_140003.json",
+    //         "comando_20250729_134930.json",
+    //         "comando_20250729_134149.json",
+    //         "comando_20250729_133602.json",
+    //         "comando_20250729_133310.json",
+    //         "comando_20250729_131609.json",
+    //         "comando_20250728_144314.json",
+    //         "comando_20250728_142835.json",
+    //         "comando_20250728_142635.json",
+    //         "comando_20250728_142547.json",
+    //         "comando_20250728_142002.json",
+    //         "comando_20250728_141540.json",
+    //         "comando_20250728_141335.json",
+    //         "comando_20250728_141228.json",
+    //         "comando_20250729_140003.json",
+    //         "comando_20250729_134930.json",
+    //         "comando_20250729_134149.json",
+    //         "comando_20250729_133602.json",
+    //         "comando_20250729_133310.json",
+    //         "comando_20250729_131609.json",
+    //         "comando_20250728_144314.json",
+    //         "comando_20250728_142835.json",
+    //         "comando_20250728_142635.json",
+    //         "comando_20250728_142547.json",
+    //         "comando_20250728_142002.json",
+    //         "comando_20250728_141540.json",
+    //         "comando_20250728_141335.json",
+    //         "comando_20250728_141228.json",
+    //         "comando_20250728_141205.json"
+    //     ],
+    //     "quantidade": 15,
+    //     "status": "sucesso"
+    // };
+    // listaHistoricoComandos(data.arquivos, data.quantidade);
+}
+function gravarComando() {
+    fetch('http://localhost:5000/gravar_data_comando').then(data => window.alert(data));
+}
+function salvarComando() {
+    fetch('http://localhost:5000/salvar_comando').then(data => window.alert(data));
+}
