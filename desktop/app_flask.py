@@ -13,8 +13,10 @@ app = Flask(__name__)
 CORS(app) 
 
 
-CAMINHO_COMANDO = 'comando.json'
-DIRETORIO_HISTORICO = 'historico_de_comandos'
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+CAMINHO_COMANDO = os.path.join(BASE_DIR, 'comando.json')
+DIRETORIO_HISTORICO = os.path.join(BASE_DIR, 'historico_de_comandos')
+
 os.makedirs(DIRETORIO_HISTORICO, exist_ok=True)
 
 DATA_CHAVE = "_data_registro_"  # Nome especial para guardar data/hora

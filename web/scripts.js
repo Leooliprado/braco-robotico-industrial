@@ -116,11 +116,17 @@ function formatarNomeArquivo(nomeArquivo) {
 }
 /////////////////////// SERVER /////////////////////////////////
 function executaComandoGravado(comando) {
-    fetch('http://localhost:5000/executar_comandos_gravados/' + comando.id).then(data => window.alert(data));
+    fetch('http://localhost:5000/executar_comandos_gravados/' + comando.id)
+        .then(response => response.json())
+        .then(data => {
+            console.log("[EXECUTAR COMANDO]", data);
+        })
+        .catch(error => console.error("[ERRO] ao executar comando gravado:", error));
 }
+
 function getHistoricoComandos() {
     fetch('http://localhost:5000/listar_comandos_gravados')
-        .then(response => response.json())  // <-- necessário
+        .then(response => response.json())
         .then(data => listaHistoricoComandos(data.arquivos, data.quantidade))
         .catch(error => console.error('Erro ao buscar histórico:', error));
 
@@ -163,9 +169,21 @@ function getHistoricoComandos() {
     // };
     // listaHistoricoComandos(data.arquivos, data.quantidade);
 }
+
 function gravarComando() {
-    fetch('http://localhost:5000/gravar_data_comando').then(data => window.alert(data));
+    fetch('http://localhost:5000/gravar_data_comando')
+        .then(response => response.json())
+        .then(data => {
+            console.log("[GRAVAR COMANDO]", data);
+        })
+        .catch(error => console.error("Erro ao gravar comando:", error));
 }
+
 function salvarComando() {
-    fetch('http://localhost:5000/salvar_comando').then(data => window.alert(data));
+    fetch('http://localhost:5000/salvar_comando')
+        .then(response => response.json())
+        .then(data => {
+            console.log("[SALVAR COMANDO]", data);
+        })
+        .catch(error => console.error("Erro ao salvar comando:", error));
 }

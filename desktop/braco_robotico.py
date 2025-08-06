@@ -1,3 +1,4 @@
+import os
 from inputs import get_gamepad
 import json
 import serial
@@ -14,6 +15,10 @@ estado = {
     'GA': {'sentido': 'parado', 'passos': 0},
     'GA2': {'sentido': 'parado', 'agulo': 90}
 }
+
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+CAMINHO_COMANDO = os.path.join(BASE_DIR, 'comando.json')
 
 # Função para encontrar a porta do Arduino Mega
 def encontrar_arduino():
@@ -37,7 +42,7 @@ ser = encontrar_arduino()
 
 
 # Limpa o arquivo comando.json ao iniciar o programa
-with open('comando.json', 'w') as f:
+with open(CAMINHO_COMANDO, 'w') as f:
     f.write('[]')
 
 # Função que envia comandos continuamente
@@ -60,7 +65,7 @@ def enviar_loop():
 
                 # Carrega os comandos anteriores (se existirem)
                 try:
-                    with open('comando.json', 'r') as f:
+                    with open(CAMINHO_COMANDO, 'r') as f:
                         comandos_salvos = json.load(f)
                 except (FileNotFoundError, json.JSONDecodeError):
                     comandos_salvos = []
@@ -69,7 +74,7 @@ def enviar_loop():
                 comandos_salvos.append(comando_com_tempo)
 
                 # Salva todos os comandos no arquivo
-                with open('comando.json', 'w') as f:
+                with open(CAMINHO_COMANDO, 'w') as f:
                     json.dump(comandos_salvos, f, indent=2)
 
             time.sleep(0.1)
