@@ -1,6 +1,6 @@
 # <img src="https://img.icons8.com/emoji/48/robot-emoji.png" width="30"/> Braço Robotico Industrial
 
-Sistema de controle para braço robótico industrial utilizando um controle de videogame como joystick. Os comandos são enviados via JSON para um Arduino Mega que controla motores de passo, com visualização em tempo real via interface.
+Sistema de controle para braço robótico industrial utilizando um controle de videogame como joystick. Os comandos são enviados via JSON para um Arduino Mega, que controla motores de passo, com visualização em tempo real por meio de uma interface. Os movimentos também podem ser gravados e reproduzidos posteriormente, permitindo a automação do braço robótico, que executa os movimentos de forma autônoma conforme os comandos programados. O sistema permite que o braço seja controlado manualmente pelo joystick ou funcione sozinho. O projeto utiliza um Arduino Mega com um shield de impressora 3D acoplado.
 
 ---
 
