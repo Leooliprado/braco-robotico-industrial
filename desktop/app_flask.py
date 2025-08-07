@@ -6,16 +6,25 @@ import os
 import json
 from flask import Flask, jsonify
 from braco_robotico import encontrar_arduino
-from flask_cors import CORS  # ADICIONE ISSO
+from flask_cors import CORS 
 
 
 app = Flask(__name__)
 CORS(app) 
 
 
+#=-=-=-=-=-=-=-=-=-=-=-=-=-= caminho para os arquivos na hora que esecuta em .bin ou .exe =-=-=-=-=-=-=-=-=-=-=-=-=-= 
+
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 CAMINHO_COMANDO = os.path.join(BASE_DIR, 'comando.json')
 DIRETORIO_HISTORICO = os.path.join(BASE_DIR, 'historico_de_comandos')
+
+#=-=-=-=-=-=-=-=-=-=-=-=-=-= caminho para os arquivos na hora que esecuta em .sh ou .bat =-=-=-=-=-=-=-=-=-=-=-=-=-= 
+
+# CAMINHO_COMANDO = 'comando.json'
+# DIRETORIO_HISTORICO = 'historico_de_comandos'
+
+#=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
 os.makedirs(DIRETORIO_HISTORICO, exist_ok=True)
 

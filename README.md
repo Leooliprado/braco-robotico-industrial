@@ -19,10 +19,12 @@ git clone https://github.com/Leooliprado/braco-robotico-industrial.git
 Todas as dependências necessárias já estão listadas no arquivo `requirements.txt` incluído no projeto:
 
 ```txt
-PyQt5
-PyQtWebEngine
-inputs
 pyserial
+flask
+flask-cors
+inputs
+pyqt5
+pyqtwebengine
 ````
 
 **Passo a passo recomendado:**
@@ -82,7 +84,41 @@ start_robot.bat
 
 No Linux, existem **duas formas** de executar:
 
-**1) Usando o script de inicialização:**
+
+### **1) Pelo código-fonte (modo desenvolvimento)**
+
+Antes de executar o código, edite as variáveis de caminho no seu script para apontar corretamente para os arquivos, **comentando ou descomentando** as linhas conforme a forma de execução.
+
+#### ➤ Se for executar diretamente com `.sh` ou `.bat`:
+
+Use caminhos **relativos**. Isso facilita a execução no terminal sem precisar compilar o programa.
+
+A alteração deve ser feita nos arquivos:
+**`app_flask.py`** e **`braco_robotico.py`**
+
+Exemplo:
+
+**`app_flask.py`**
+
+```python
+# Caminhos relativos (uso com .sh ou .bat)
+CAMINHO_COMANDO = 'comando.json'
+DIRETORIO_HISTORICO = 'historico_de_comandos'
+```
+
+**`braco_robotico.py`**
+
+```python
+# Caminhos relativos (uso com .sh ou .bat)
+CAMINHO_COMANDO = 'comando.json'
+```
+
+Certifique-se de **comentar as linhas que utilizam `BASE_DIR`**.
+
+
+---
+
+#### ➤  Usando o script de inicialização:
 
 Dê permissão de execução e execute:
 
@@ -95,9 +131,26 @@ chmod +x start_robot.sh
 
 ---
 
-**2) Diretamente pelo aplicativo desktop:**
+### **2) Diretamente pelo aplicativo desktop:**
 
-Abra manualmente o **aplicativo desktop** incluído no projeto, que utiliza PyQt5 para exibir a interface HTML.
+Ative o ambiente virtual (caso ainda não tenha feito):
+
+```bash
+source venv/bin/activate
+```
+
+Instale o **Nuitka**, se ainda não estiver instalado:
+
+```bash
+pip install nuitka
+```
+
+Rode o aplicativo com:
+
+```bash
+nuitka rum_app.py
+```
+
 
 No Linux, basta clicar no arquivo:
 
@@ -144,7 +197,7 @@ Assim, você poderá iniciar o sistema com um **clique**.
 * Arduino Mega 2560
 * Drivers A4988 ou similares
 * Motores de passo nema 17
-* Um servo motor
+* Um motor de Passo 28BYJ-48 com o driver ULN2003
 * Controle de videogame USB (DualShock 4 - PS4)
 * ESP32-CAM (opcional)
 * Fonte externa adequada para motores

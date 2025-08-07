@@ -16,9 +16,16 @@ estado = {
     'GA2': {'sentido': 'parado', 'agulo': 90}
 }
 
+#=-=-=-=-=-=-=-=-=-=-=-=-=-= caminho para os arquivos na hora que esecuta em .bin ou .exe =-=-=-=-=-=-=-=-=-=-=-=-=-= 
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 CAMINHO_COMANDO = os.path.join(BASE_DIR, 'comando.json')
+
+#=-=-=-=-=-=-=-=-=-=-=-=-=-= caminho para os arquivos na hora que esecuta em .sh ou .bat =-=-=-=-=-=-=-=-=-=-=-=-=-= 
+
+# CAMINHO_COMANDO = 'comando.json'
+
+#=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
 # Função para encontrar a porta do Arduino Mega
 def encontrar_arduino():

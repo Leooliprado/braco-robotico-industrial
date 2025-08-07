@@ -1,4 +1,6 @@
-PyQt5
-PyQtWebEngine
-inputs
 pyserial
+flask
+flask-cors
+inputs
+pyqt5
+pyqtwebengine
