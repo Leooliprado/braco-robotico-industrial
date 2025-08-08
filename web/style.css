@@ -24,6 +24,13 @@ h1 {
     height: 100%;
 }
 
+.linhaIcones {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+
+}
+
 .container {
     width: 70%;
     flex-wrap: nowrap;
@@ -111,14 +118,15 @@ h1 {
     background-color: #ffffff;
     z-index: 1;
     padding: 10px 0 10px 0
-    /* Fica acima dos outros elementos */
+        /* Fica acima dos outros elementos */
 }
-.comandoSelecionar:nth-child(even) {
-    background-color: #e2e2e2;
-}
+
+
 #listaHistorico {
-    border: #004aeb solid 2px;
+    border: #004aeb solid 3px;
+    border-radius: 12px;
 }
+
 pre {
     white-space: pre-wrap;
     word-wrap: break-word;
@@ -196,15 +204,69 @@ pre {
     box-shadow: 0 2px 10px rgba(231, 76, 60, 0.3);
 }
 
+.lista-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(24%, 1fr));
+
+    /* ajusta automaticamente */
+    gap: 5px;
+    padding: 10px;
+}
+
+
 .comandoSelecionar {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
     cursor: pointer;
     margin-bottom: 4px;
     font-size: large;
 }
-
 .comandoSelecionar:hover {
-    transition: 0.1s ease;
-    background-color: #004aeb;
+    border: #333 solid 1px;
+}
+
+.cardIcone {
+    width: 25%;
+    padding: 6px;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    font-size: 18px;
+}
+
+
+.cardIcone.Play {
+    color: #28a745;
+    /* verde */
+}
+
+.cardIcone.Play:hover {
+    background-color: #28a745;
+    color: white;
+}
+
+.cardIcone.Edit {
+    color: #ffc107;
+    /* amarelo */
+}
+
+.cardIcone.Edit:hover {
+    background-color: #ffc107;
+    color: black;
+}
+
+.cardIcone.Delete {
+    color: #dc3545;
+    /* vermelho */
+}
+
+.cardIcone.Delete:hover {
+    background-color: #dc3545;
     color: white;
 }
 
