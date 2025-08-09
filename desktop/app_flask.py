@@ -7,6 +7,7 @@ import json
 from flask import Flask, jsonify
 from braco_robotico import encontrar_arduino
 from flask_cors import CORS 
+from plyer import notification
 
 
 app = Flask(__name__)
@@ -50,6 +51,12 @@ def registrar_data_comando():
     with open(CAMINHO_COMANDO, 'w') as f:
         json.dump(comandos, f, indent=2)
 
+    notification.notify(
+        title='Gravação Iniciada',
+        message=f'Gravação iniciada com sucesso!',
+        timeout=5
+    )
+
     return jsonify({"status": "gravacao iniciada com sucesso", "data_hora": data_hora})
 
 
@@ -60,6 +67,11 @@ def registrar_data_comando():
 @app.route('/salvar_comando', methods=['GET'])
 def salvar_comando():
     if not os.path.isfile(CAMINHO_COMANDO):
+        notification.notify(
+            title='Erro ao Salvar',
+            message=f'Arquivo comando.json não encontrado',
+            timeout=5
+        )
         return jsonify({"status": "erro", "mensagem": "Arquivo comando.json não encontrado"}), 404
 
     try:
@@ -89,9 +101,20 @@ def salvar_comando():
         with open(CAMINHO_COMANDO, 'w') as f:
             json.dump([], f)
 
+        notification.notify(
+            title='Gravação Salva',
+            message=f'Gravação salva com sucesso!',
+            timeout=5
+        )
+
         return jsonify({"status": "gravacao salva com sucesso", "arquivo_salvo": caminho_destino})
 
     except Exception as e:
+        notification.notify(
+            title='Erro ao Salvar',
+            message=f'Erro ao salvar gravação: {str(e)}',
+            timeout=5
+        )
         return jsonify({"status": "erro", "mensagem": str(e)}), 500
 
 
@@ -142,6 +165,15 @@ def listar_comandos_gravados():
 @app.route('/executar_comandos_gravados/<nome_arquivo>', methods=['GET'])
 def executar_comandos_gravados(nome_arquivo):
     try:
+
+        # Aqui manda a notificação no PC
+        mensagem_formatada = formatar_nome_arquivo_notificacao(nome_arquivo)
+
+        notification.notify(
+            title='Braço Robótico em Execução',
+            message=f'Comando {mensagem_formatada} está sendo executado',
+            timeout=5
+        )
         # Estabelece conexão serial
         ser = encontrar_arduino()
         
@@ -179,6 +211,15 @@ def executar_comandos_gravados(nome_arquivo):
             ser.write((json.dumps(comando['comando']) + "\n").encode())
             print(f"[REPLAY] Enviado: {comando}")
             ultimo_tempo = tempo_atual
+
+         # Aqui manda a notificação no PC
+        mensagem_formatada = formatar_nome_arquivo_notificacao(nome_arquivo)
+
+        notification.notify(
+            title='Braço Robótico Executado com Sucesso',
+            message=f'Comando {mensagem_formatada} está sendo com sucesso',
+            timeout=5
+        )
         
         ser.close()
         return jsonify({"status": "sucesso", "mensagem": f"Comandos do arquivo {nome_arquivo} executados com sucesso"})
@@ -188,15 +229,47 @@ def executar_comandos_gravados(nome_arquivo):
             ser.close()
         return jsonify({"status": "erro", "mensagem": str(e)}), 500
 
-    
-
-
-
-
-
-
 
 
 
 def start_flask():
     app.run(port=5000, debug=False, use_reloader=False)
+
+
+
+
+
+
+
+#=-=-=-=-=-=-=-=-=-=-= Função Estra fora do Flesk(Servidor) =-=-=-=-=-=-=-=-=-=-=
+
+
+
+def formatar_nome_arquivo_notificacao(nome_arquivo):
+    # Remove a extensão .json
+    nome_sem_ext = nome_arquivo.replace('.json', '')
+
+    # Divide pelo underline _
+    partes = nome_sem_ext.split('_')
+
+    if len(partes) >= 3:
+        comando = partes[0]
+        data = partes[1]
+        hora = partes[2]
+
+        # Extrai ano, mes, dia da data
+        ano = data[0:4]
+        mes = data[4:6]
+        dia = data[6:8]
+
+        # Extrai hora, minuto, segundo da hora
+        h = hora[0:2]
+        m = hora[2:4]
+        s = hora[4:6]
+
+        data_formatada = f"{dia}/{mes}/{ano} {h}:{m}:{s}"
+        return f"{comando}: {data_formatada}"
+    else:
+        # Se o nome não está no formato esperado, retorna o nome original
+        return nome_arquivo
+

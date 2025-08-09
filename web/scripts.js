@@ -80,17 +80,24 @@ function listaHistoricoComandos(dados, quantidade) {
     lista.innerHTML = ''; // limpa o conteúdo antes de preencher
 
     for (let dado of dados) {
-    lista.innerHTML += `
+        lista.innerHTML += `
         <div id="${dado}" class="comandoSelecionar">
             ${formatarNomeArquivo(dado)}
             <br>
             <div class="linhaIcones">
-                <div class="cardIcone Play"><i class="fa-solid fa-circle-play" onclick="executaComandoGravado(this)"></i></div>
-                <div class="cardIcone Edit"><i class="fa-regular fa-pen-to-square" onclick="renomeiaComandoGravado(this)"></i></div>
-                <div class="cardIcone Delete"><i class="fa-regular fa-trash-can" onclick="deletaComandoGravado(this)"></i></div>
+                <div class="cardIcone Play">
+                    <i class="fa-solid fa-circle-play" onclick="executaComandoGravado(this)"></i>
+                </div>
+                <div class="cardIcone Edit">
+                    <i class="fa-regular fa-pen-to-square" onclick="renomeiaComandoGravado(this)"></i>
+                </div>
+                <div class="cardIcone Delete">
+                    <i class="fa-regular fa-trash-can" onclick="deletaComandoGravado(this)"></i>
+                </div>
             </div>
         </div>
     `;
+    
 }
 }
 
@@ -120,14 +127,19 @@ function formatarNomeArquivo(nomeArquivo) {
     return `${prefixo}: ${dataFormatada} ${horaFormatada}`;
 }
 /////////////////////// SERVER /////////////////////////////////
-function executaComandoGravado(comando) {
-    fetch('http://localhost:5000/executar_comandos_gravados/' + comando.id)
-        .then(response => response.json())
+function executaComandoGravado(el) {
+    const id = el.closest('.comandoSelecionar').id; // pega o id do bloco
+    fetch('http://localhost:5000/executar_comandos_gravados/' + id)
+        .then(response => {
+            if (!response.ok) throw new Error(`Erro ${response.status}: ${response.statusText}`);
+            return response.json();
+        })
         .then(data => {
             console.log("[EXECUTAR COMANDO]", data);
         })
         .catch(error => console.error("[ERRO] ao executar comando gravado:", error));
 }
+
 function renomeiaComandoGravado(comando) {
     // fetch('http://localhost:5000/executar_comandos_gravados/' + comando.id)
     //     .then(response => response.json())
@@ -146,49 +158,49 @@ function deletaComandoGravado(comando) {
 }
 
 function getHistoricoComandos() {
-    // fetch('http://localhost:5000/listar_comandos_gravados')
-    //     .then(response => response.json())
-    //     .then(data => listaHistoricoComandos(data.arquivos, data.quantidade))
-    //     .catch(error => console.error('Erro ao buscar histórico:', error));
+    fetch('http://localhost:5000/listar_comandos_gravados')
+        .then(response => response.json())
+        .then(data => listaHistoricoComandos(data.arquivos, data.quantidade))
+        .catch(error => console.error('Erro ao buscar histórico:', error));
 
     //TESTE ABAIXO
 
-    const data = {
-        "arquivos": [
-            "comando_20250729_140003.json",
-            "comando_20250729_134930.json",
-            "comando_20250729_134149.json",
-            "comando_20250729_133602.json",
-            "comando_20250729_133310.json",
-            "comando_20250729_131609.json",
-            "comando_20250728_144314.json",
-            "comando_20250728_142835.json",
-            "comando_20250728_142635.json",
-            "comando_20250728_142547.json",
-            "comando_20250728_142002.json",
-            "comando_20250728_141540.json",
-            "comando_20250728_141335.json",
-            "comando_20250728_141228.json",
-            "comando_20250729_140003.json",
-            "comando_20250729_134930.json",
-            "comando_20250729_134149.json",
-            "comando_20250729_133602.json",
-            "comando_20250729_133310.json",
-            "comando_20250729_131609.json",
-            "comando_20250728_144314.json",
-            "comando_20250728_142835.json",
-            "comando_20250728_142635.json",
-            "comando_20250728_142547.json",
-            "comando_20250728_142002.json",
-            "comando_20250728_141540.json",
-            "comando_20250728_141335.json",
-            "comando_20250728_141228.json",
-            "comando_20250728_141205.json"
-        ],
-        "quantidade": 15,
-        "status": "sucesso"
-    };
-    listaHistoricoComandos(data.arquivos, data.quantidade);
+    // const data = {
+    //     "arquivos": [
+    //         "comando_20250729_140003.json",
+    //         "comando_20250729_134930.json",
+    //         "comando_20250729_134149.json",
+    //         "comando_20250729_133602.json",
+    //         "comando_20250729_133310.json",
+    //         "comando_20250729_131609.json",
+    //         "comando_20250728_144314.json",
+    //         "comando_20250728_142835.json",
+    //         "comando_20250728_142635.json",
+    //         "comando_20250728_142547.json",
+    //         "comando_20250728_142002.json",
+    //         "comando_20250728_141540.json",
+    //         "comando_20250728_141335.json",
+    //         "comando_20250728_141228.json",
+    //         "comando_20250729_140003.json",
+    //         "comando_20250729_134930.json",
+    //         "comando_20250729_134149.json",
+    //         "comando_20250729_133602.json",
+    //         "comando_20250729_133310.json",
+    //         "comando_20250729_131609.json",
+    //         "comando_20250728_144314.json",
+    //         "comando_20250728_142835.json",
+    //         "comando_20250728_142635.json",
+    //         "comando_20250728_142547.json",
+    //         "comando_20250728_142002.json",
+    //         "comando_20250728_141540.json",
+    //         "comando_20250728_141335.json",
+    //         "comando_20250728_141228.json",
+    //         "comando_20250728_141205.json"
+    //     ],
+    //     "quantidade": 15,
+    //     "status": "sucesso"
+    // };
+    // listaHistoricoComandos(data.arquivos, data.quantidade);
 }
 
 function gravarComando() {
