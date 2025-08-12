@@ -8,7 +8,7 @@ from flask import Flask, jsonify
 from braco_robotico import encontrar_arduino
 from flask_cors import CORS 
 from plyer import notification
-
+from flask import request
 
 app = Flask(__name__)
 CORS(app) 
@@ -128,26 +128,35 @@ def salvar_comando():
 def listar_comandos_gravados():
     try:
         arquivos = os.listdir(DIRETORIO_HISTORICO)
-        jsons = [f for f in arquivos if f.endswith('.json') and f.startswith('comando_')]
-        
-        # Função para extrair a data do nome do arquivo
-        def extrair_data(nome_arquivo):
+        jsons = [f for f in arquivos if f.endswith('.json')]
+
+        # Listas separadas
+        sem_data = []
+        com_data = []
+
+        for nome_arquivo in jsons:
             try:
-                # Formato esperado: comando_YYYYMMDD_HHMMSS.json
+                # Tenta extrair a data (formato esperado: comando_YYYYMMDD_HHMMSS.json)
                 partes = nome_arquivo.split('_')
                 data_str = partes[1] + '_' + partes[2].split('.')[0]
-                return datetime.strptime(data_str, '%Y%m%d_%H%M%S')
+                data = datetime.strptime(data_str, '%Y%m%d_%H%M%S')
+                com_data.append((nome_arquivo, data))
             except:
-                return datetime.min  # Retorna data mínima se não conseguir parsear
-        
-        # Ordena os arquivos por data (do mais recente para o mais antigo)
-        jsons_ordenados = sorted(jsons, key=extrair_data, reverse=True)
-        
+                # Não conseguiu extrair a data → vai para o topo
+                sem_data.append(nome_arquivo)
+
+        # Ordena os que têm data (mais recentes primeiro)
+        com_data.sort(key=lambda x: x[1], reverse=True)
+
+        # Junta: sem_data primeiro, depois com_data
+        jsons_ordenados = sem_data + [nome for nome, _ in com_data]
+
         return jsonify({
             "status": "sucesso",
             "arquivos": jsons_ordenados,
             "quantidade": len(jsons_ordenados)
         })
+
     except Exception as e:
         return jsonify({
             "status": "erro",
@@ -155,8 +164,6 @@ def listar_comandos_gravados():
             "arquivos": [],
             "quantidade": 0
         }), 500
-
-
 
 
 
@@ -228,6 +235,76 @@ def executar_comandos_gravados(nome_arquivo):
         if 'ser' in locals():
             ser.close()
         return jsonify({"status": "erro", "mensagem": str(e)}), 500
+
+
+
+
+
+
+
+
+
+@app.route('/excluir_comando/<nome_arquivo>', methods=['DELETE'])
+def excluir_comando(nome_arquivo):
+    try:
+        caminho_arquivo = os.path.join(DIRETORIO_HISTORICO, nome_arquivo)
+
+        if not os.path.exists(caminho_arquivo):
+            return jsonify({"status": "erro", "mensagem": "Arquivo não encontrado"}), 404
+
+        os.remove(caminho_arquivo)
+
+        notification.notify(
+            title='Arquivo Excluído',
+            message=f'O arquivo {formatar_nome_arquivo_notificacao(nome_arquivo)} foi excluído com sucesso.',
+            timeout=5
+        )
+
+        return jsonify({"status": "sucesso", "mensagem": f"Arquivo {nome_arquivo} excluído com sucesso"})
+
+    except Exception as e:
+        return jsonify({"status": "erro", "mensagem": str(e)}), 500
+
+
+
+
+
+
+@app.route('/renomear_comando', methods=['PUT'])
+def renomear_comando():
+    try:
+        dados = request.get_json()
+        nome_atual = dados.get('nome_atual')
+        novo_nome = dados.get('novo_nome')
+
+        if not nome_atual or not novo_nome:
+            return jsonify({"status": "erro", "mensagem": "Parâmetros 'nome_atual' e 'novo_nome' são obrigatórios"}), 400
+
+        caminho_atual = os.path.join(DIRETORIO_HISTORICO, nome_atual)
+        caminho_novo = os.path.join(DIRETORIO_HISTORICO, novo_nome)
+
+        if not os.path.exists(caminho_atual):
+            return jsonify({"status": "erro", "mensagem": "Arquivo atual não encontrado"}), 404
+
+        if os.path.exists(caminho_novo):
+            return jsonify({"status": "erro", "mensagem": "Já existe um arquivo com o novo nome"}), 400
+
+        os.rename(caminho_atual, caminho_novo)
+
+        notification.notify(
+            title='Arquivo Renomeado',
+            message=f'O arquivo {formatar_nome_arquivo_notificacao(nome_atual)} foi renomeado para {formatar_nome_arquivo_notificacao(novo_nome)}.',
+            timeout=5
+        )
+
+        return jsonify({"status": "sucesso", "mensagem": f"Arquivo renomeado para {novo_nome}"})
+
+    except Exception as e:
+        return jsonify({"status": "erro", "mensagem": str(e)}), 500
+
+
+
+
 
 
 

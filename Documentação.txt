@@ -121,3 +121,89 @@ Numero do erro: 400
 
 Numero do erro: 500
 "status": "erro", "mensagem": str(e)
+
+
+
+
+
+
+
+
+
+=-=-=-=-=-=-=-=-=-=-=-= Excluir comando gravado (DELETE) =-=-=-=-=-=-=-=-=-=-=-=
+
+
+DELETE /excluir_comando/<nome_arquivo>
+
+Parâmetros:
+nome_arquivo (string): Nome do arquivo JSON a ser excluído, ex: comando_20250811_145000.json
+
+Exemplo de requisição
+
+
+DELETE http://localhost:5000/excluir_comando/comando_20250811_145000.json
+Resposta de sucesso
+
+
+{
+  "status": "sucesso",
+  "mensagem": "Arquivo comando_20250811_145000.json excluído com sucesso"
+}
+Resposta de erro
+
+{
+  "status": "erro",
+  "mensagem": "Arquivo não encontrado"
+}
+
+
+
+=-=-=-=-=-=-=-=-=-=-=-= Renomear comando gravado (PUT) =-=-=-=-=-=-=-=-=-=-=-=
+
+
+PUT /renomear_comando
+
+Corpo da requisição (JSON)
+
+{
+  "nome_atual": "comando_20250811_145000.json",
+  "novo_nome": "comando_teste.json"
+}
+
+
+nome_atual (string): Nome do arquivo existente que será renomeado.
+
+novo_nome (string): Novo nome desejado para o arquivo.
+
+Exemplo de requisição
+
+PUT http://localhost:5000/renomear_comando
+Content-Type: application/json
+
+{
+  "nome_atual": "comando_20250811_145000.json",
+  "novo_nome": "comando_teste.json"
+}
+Resposta de sucesso
+
+{
+  "status": "sucesso",
+  "mensagem": "Arquivo renomeado para comando_teste.json"
+}
+Resposta de erro
+
+{
+  "status": "erro",
+  "mensagem": "Já existe um arquivo com o novo nome"
+}
+
+
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Obiservação: toda ves que for editar ou renomear chama a rota:
+
+
+http://localhost:5000/listar_comandos_gravados
+
+
+isso é apara atualizar a lista de comandos gravados

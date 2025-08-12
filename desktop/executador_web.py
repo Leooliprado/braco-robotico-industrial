@@ -8,6 +8,9 @@ from PyQt5.QtWebEngineWidgets import QWebEngineView
 from PyQt5.QtCore import QUrl
 from functools import partial 
 
+# from PyQt5.QtWebEngineWidgets import QWebEngineProfile
+
+
 PORTA = 8080
 
 class TCPServerComReuso(socketserver.TCPServer):
@@ -47,6 +50,12 @@ class MainWindow(QMainWindow):
         self.setWindowTitle("Braço Robotico Industrial")
         self.setGeometry(100, 100, 800, 600)# tamanho da janela sem maximizar
         self.showMaximized()#deicha em tela cheia (maximizar)
+
+        # Limpa cookies e cache
+        # profile = QWebEngineProfile.defaultProfile()
+        # profile.cookieStore().deleteAllCookies()
+        # profile.clearHttpCache()
+
 
 
         view = QWebEngineView()

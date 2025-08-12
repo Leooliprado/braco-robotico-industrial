@@ -104,28 +104,38 @@ function listaHistoricoComandos(dados, quantidade) {
 
 
 
-
 function formatarNomeArquivo(nomeArquivo) {
     // Remove a extensão .json
-    const base = nomeArquivo.replace('.json', '');
+    const base = nomeArquivo.replace(/\.json$/i, '');
 
-    // Extrai partes do nome
-    const [prefixo, dataStr, horaStr] = base.split('_');
+    // Tenta dividir pelo padrão esperado
+    const partes = base.split('_');
 
-    // Formata data
-    const ano = dataStr.slice(0, 4);
-    const mes = dataStr.slice(4, 6);
-    const dia = dataStr.slice(6, 8);
-    const dataFormatada = `${dia}/${mes}/${ano}`;
+    // Caso o formato esteja correto (prefixo + data + hora)
+    if (partes.length >= 3 && partes[1].length === 8 && partes[2].length === 6) {
+        const prefixo = partes[0];
+        const dataStr = partes[1];
+        const horaStr = partes[2];
 
-    // Formata hora
-    const hora = horaStr.slice(0, 2);
-    const minuto = horaStr.slice(2, 4);
-    const segundo = horaStr.slice(4, 6);
-    const horaFormatada = `${hora}:${minuto}:${segundo}`;
+        // Formata data
+        const ano = dataStr.slice(0, 4);
+        const mes = dataStr.slice(4, 6);
+        const dia = dataStr.slice(6, 8);
+        const dataFormatada = `${dia}/${mes}/${ano}`;
 
-    return `${prefixo}: ${dataFormatada} ${horaFormatada}`;
+        // Formata hora
+        const hora = horaStr.slice(0, 2);
+        const minuto = horaStr.slice(2, 4);
+        const segundo = horaStr.slice(4, 6);
+        const horaFormatada = `${hora}:${minuto}:${segundo}`;
+
+        return `${prefixo}: ${dataFormatada} ${horaFormatada}`;
+    }
+
+    // Caso não siga o padrão → retorna o nome original sem extensão
+    return base;
 }
+
 /////////////////////// SERVER /////////////////////////////////
 function executaComandoGravado(el) {
     const id = el.closest('.comandoSelecionar').id; // pega o id do bloco
