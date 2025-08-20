@@ -14,18 +14,11 @@ app = Flask(__name__)
 CORS(app) 
 
 
-#=-=-=-=-=-=-=-=-=-=-=-=-=-= caminho para os arquivos na hora que esecuta em .bin ou .exe =-=-=-=-=-=-=-=-=-=-=-=-=-= 
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 CAMINHO_COMANDO = os.path.join(BASE_DIR, 'comando.json')
 DIRETORIO_HISTORICO = os.path.join(BASE_DIR, 'historico_de_comandos')
 
-#=-=-=-=-=-=-=-=-=-=-=-=-=-= caminho para os arquivos na hora que esecuta em .sh ou .bat =-=-=-=-=-=-=-=-=-=-=-=-=-= 
-
-# CAMINHO_COMANDO = 'comando.json'
-# DIRETORIO_HISTORICO = 'historico_de_comandos'
-
-#=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
 os.makedirs(DIRETORIO_HISTORICO, exist_ok=True)
 
@@ -287,6 +280,11 @@ def renomear_comando():
             return jsonify({"status": "erro", "mensagem": "Arquivo atual não encontrado"}), 404
 
         if os.path.exists(caminho_novo):
+            notification.notify(
+                title='Erro ao Renomear! :(',
+                message=f'O arquivo {formatar_nome_arquivo_notificacao(novo_nome)} já existe com o esse nome.',
+                timeout=5
+            )
             return jsonify({"status": "erro", "mensagem": "Já existe um arquivo com o novo nome"}), 400
 
         os.rename(caminho_atual, caminho_novo)
@@ -307,6 +305,32 @@ def renomear_comando():
 
 
 
+
+
+
+@app.route('/ultimo_movimento_braco', methods=['GET'])
+def ultimo_movimento_braco():
+    try:
+        if not os.path.isfile(CAMINHO_COMANDO):
+            return jsonify({"status": "erro", "mensagem": "Arquivo comando.json não encontrado"}), 404
+
+        with open(CAMINHO_COMANDO, 'r') as f:
+            comandos = json.load(f)
+
+        if not comandos:
+            return jsonify({"status": "erro", "mensagem": "Nenhum comando encontrado"}), 400
+
+        # Pega o último item da lista
+        ultimo = comandos[-1]
+
+        # Se existir chave "comando", retorna só ela
+        if "comando" in ultimo:
+            return jsonify(ultimo["comando"])
+        else:
+            return jsonify({"status": "erro", "mensagem": "Último item não contém comando"}), 400
+
+    except Exception as e:
+        return jsonify({"status": "erro", "mensagem": str(e)}), 500
 
 
 def start_flask():
