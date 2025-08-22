@@ -91,7 +91,7 @@ function listaHistoricoComandos(dados, quantidade) {
                 <div title="Renomear" onclick="abrePopupRenomear('${dado}')" class="cardIcone Edit">
                     <i class="fa-regular fa-pen-to-square"></i>
                 </div>
-                <div title="Excluir" onclick="deletaComandoGravado('${dado}')" class="cardIcone Delete">
+                <div title="Excluir" onclick="abrePopupExcluir('${dado}')" class="cardIcone Delete">
                     <i class="fa-regular fa-trash-can"></i>
                 </div>
             </div>
@@ -148,8 +148,23 @@ function executaComandoGravado(comando) {
 
 
 
-function deletaComandoGravado(comando) {
-    fetch('http://localhost:5000/excluir_comando/' + comando, {
+let comandoExcluirGlobal = "";
+
+function abrePopupExcluir(comando) {
+    comandoExcluirGlobal = comando;
+    document.getElementById("textoExcluir").innerText =
+        "Tem certeza que deseja excluir o comando:\n" + formatarNomeArquivo(comando) + " ?";
+    document.getElementById("modalExcluir").classList.add("active");
+}
+
+function fecharPopupExcluir() {
+    document.getElementById("modalExcluir").classList.remove("active");
+}
+
+function confirmarExcluir() {
+    if (!comandoExcluirGlobal) return;
+
+    fetch('http://localhost:5000/excluir_comando/' + comandoExcluirGlobal, {
         method: 'DELETE'
     })
     .then(response => {
@@ -160,7 +175,11 @@ function deletaComandoGravado(comando) {
         console.log("[EXCLUIR COMANDO GRAVADO]", data);
         getHistoricoComandos();
     })
-    .catch(error => console.error("[ERRO] ao excluir comando gravado:", error));
+    .catch(error => console.error("[ERRO] ao excluir comando gravado:", error))
+    .finally(() => {
+        fecharPopupExcluir();
+        comandoExcluirGlobal = "";
+    });
 }
 
 function getHistoricoComandos() {
@@ -269,7 +288,6 @@ function PUTRenomearComandoGravado(nomeAtual, novoNome) {
         })
         .then(data => {
             console.log("[RENOMEAR COMANDO]", data);
-            alert("Comando renomeado com sucesso!");
             getHistoricoComandos();
         })
         .catch(error => console.error("[ERRO] ao renomear comando gravado:", error));

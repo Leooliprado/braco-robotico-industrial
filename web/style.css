@@ -390,6 +390,49 @@ pre::-webkit-scrollbar-thumb:hover {
 }
 
 
+
+.botoes2 button {
+    padding: 12px 24px;
+    width: 45%;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.95em;
+}
+
+.botoes2 button:last-child {
+    background: linear-gradient(135deg, #ffca28 0%, #ffc107 100%);
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.botoes2 button:last-child:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(255, 193, 7, 0.4);
+}
+
+.botoes2 button:first-child  {
+    background: #fdecea;
+    /* tom mais suave próximo do vermelho */
+    color: #e74c3c;
+    /* texto vermelho */
+    border: 1px solid red;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.botoes2 button:first-child:hover {
+    background: #f9d6d0;
+    /* hover um pouco mais escuro */
+    transform: translateY(-2px);
+}
+
+
+
 /* Ícone de fechar */
 .fechar-modal {
     position: absolute;
