@@ -59,7 +59,7 @@ class MainWindow(QMainWindow):
 
 
         view = QWebEngineView()
-        view.load(QUrl(f"http://localhost:{PORTA}/index.html"))
+        view.load(QUrl(f"http://localhost:{PORTA}/paginaRobo.html"))
         self.setCentralWidget(view)
 
     def closeEvent(self, event):

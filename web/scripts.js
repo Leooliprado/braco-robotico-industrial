@@ -1,6 +1,6 @@
 // Variável para armazenar o último conteúdo
 let ultimoConteudo = null;
-
+window.liberado = false;
 async function buscarComando() {
     try {
         console.log("Buscando comando...");
@@ -85,20 +85,20 @@ function listaHistoricoComandos(dados, quantidade) {
             ${formatarNomeArquivo(dado)}
             <br>
             <div class="linhaIcones">
-                <div class="cardIcone Play">
-                    <i class="fa-solid fa-circle-play" onclick="executaComandoGravado(this)"></i>
+                <div onclick="executaComandoGravado('${dado}')" class="cardIcone Play">
+                    <i class="fa-solid fa-circle-play"></i>
                 </div>
-                <div class="cardIcone Edit">
-                    <i class="fa-regular fa-pen-to-square" onclick="renomeiaComandoGravado(this)"></i>
+                <div onclick="abrePopupRenomear('${dado}')" class="cardIcone Edit">
+                    <i class="fa-regular fa-pen-to-square"></i>
                 </div>
-                <div class="cardIcone Delete">
-                    <i class="fa-regular fa-trash-can" onclick="deletaComandoGravado(this)"></i>
+                <div onclick="deletaComandoGravado('${dado}')" class="cardIcone Delete">
+                    <i class="fa-regular fa-trash-can"></i>
                 </div>
             </div>
         </div>
     `;
-    
-}
+
+    }
 }
 
 
@@ -137,34 +137,23 @@ function formatarNomeArquivo(nomeArquivo) {
 }
 
 /////////////////////// SERVER /////////////////////////////////
-function executaComandoGravado(el) {
-    const id = el.closest('.comandoSelecionar').id; // pega o id do bloco
-    fetch('http://localhost:5000/executar_comandos_gravados/' + id)
-        .then(response => {
-            if (!response.ok) throw new Error(`Erro ${response.status}: ${response.statusText}`);
-            return response.json();
-        })
+function executaComandoGravado(comando) {
+    fetch('http://localhost:5000/executar_comandos_gravados/' + comando)
+        .then(response => response.json())
         .then(data => {
             console.log("[EXECUTAR COMANDO]", data);
         })
         .catch(error => console.error("[ERRO] ao executar comando gravado:", error));
 }
 
-function renomeiaComandoGravado(comando) {
-    // fetch('http://localhost:5000/executar_comandos_gravados/' + comando.id)
-    //     .then(response => response.json())
-    //     .then(data => {
-    //         console.log("[EXECUTAR COMANDO]", data);
-    //     })
-    //     .catch(error => console.error("[ERRO] ao executar comando gravado:", error));
-}
+
 function deletaComandoGravado(comando) {
-    // fetch('http://localhost:5000/executar_comandos_gravados/' + comando.id)
-    //     .then(response => response.json())
-    //     .then(data => {
-    //         console.log("[EXECUTAR COMANDO]", data);
-    //     })
-    //     .catch(error => console.error("[ERRO] ao executar comando gravado:", error));
+    fetch('http://localhost:5000/excluir_comando/' + comando)
+        .then(response => response.json())
+        .then(data => {
+            console.log("[EXECUTAR COMANDO]", data);
+        })
+        .catch(error => console.error("[ERRO] ao executar comando gravado:", error));
 }
 
 function getHistoricoComandos() {
@@ -229,4 +218,52 @@ function salvarComando() {
             console.log("[SALVAR COMANDO]", data);
         })
         .catch(error => console.error("Erro ao salvar comando:", error));
+}
+
+let nomeAtualGlobal = "";
+
+function abrePopupRenomear(nomeAtual) {
+    nomeAtualGlobal = nomeAtual;
+    document.getElementById("novoNomeInput").value = nomeAtual;
+    document.getElementById('modalRenomear').classList.add('active');
+    document.getElementById('novoNomeInput').focus();
+}
+
+function fecharPopup() {
+    document.getElementById('modalRenomear').classList.remove('active');
+}
+
+function confirmarRenomear() {
+    let novoNome = document.getElementById("novoNomeInput").value.trim();
+    if (novoNome && novoNome !== nomeAtualGlobal && novoNome !== '') {
+        PUTRenomearComandoGravado(nomeAtualGlobal, novoNome);
+        fecharPopup();
+    } else {
+        
+        window.alert('O nome não pode ser ' + ((novoNome === nomeAtualGlobal) ? 'o mesmo anteriormente usado!' : (novoNome === '' ? 'vazio!' : novoNome)));
+    }
+}
+
+function PUTRenomearComandoGravado(nomeAtual, novoNome) {
+    fetch('http://localhost:5000/renomear_comando', {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            nome_atual: nomeAtual,
+            novo_nome: novoNome
+        })
+    }).then(response => {
+            if (!response.ok) {
+                throw new Error("Erro na requisição: " + response.status);
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log("[RENOMEAR COMANDO]", data);
+            alert("Comando renomeado com sucesso!");
+            getHistoricoComandos();
+        })
+        .catch(error => console.error("[ERRO] ao renomear comando gravado:", error));
 }

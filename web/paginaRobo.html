@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Monitor de Comando JSON</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body style="display: none;">
+    <div class="linhaFlex">
+        <div class="container esquerda">
+            <button id="toggleGravar" class="gravar botaoAcao" onclick="mudaBotaoGravar()">GRAVAR</button>
+            <button id="verHistorico" class="camera botaoAcao" onclick="verHistorico()">CÂMERA</button>
+        </div>
+        <div class="container">
+
+            <div class="camera-box active">
+                <h2>Visão do Robô</h2>
+                <img src="http://192.168.15.12:81/stream" alt="Stream da Câmera" />
+            </div>
+            <div class="historicoAcoes" style="display: none;">
+                <div class="headerHistorico">
+                    <h2>Histórico de Ações</h2>
+                    <h3 style="text-align: left;">QUANTIDADE DE COMANDOS: <span id="quantidadeHistorico">
+                        </span>
+                        <hr>
+                    </h3>
+                </div>
+                <div id="listaHistorico" class="lista-cards">
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div id="modalRenomear" class="modal">
+        <div class="modal-content">
+            <span class="fechar-modal" onclick="fecharPopup()"><i class="fa-solid fa-xmark"></i>
+            </span>
+            <h3>Renomear comando</h3>
+            <input type="text" id="novoNomeInput" placeholder="Digite o novo nome" />
+            <div class="botoes">
+                <button onclick="confirmarRenomear()">Salvar</button>
+                <button onclick="fecharPopup()">Cancelar</button>
+            </div>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+
+<script>
+    if (sessionStorage.getItem('liberado') !== 'true') {
+        window.location.replace('../web/index.html');
+        sessionStorage.clear();
+
+    } else {
+        document.body.style.display = 'block';
+    }
+</script>
+
+</html>

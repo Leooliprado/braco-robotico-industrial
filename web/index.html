@@ -1,41 +1,281 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8" />
-    <title>Monitor de Comando JSON</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bem-vindo ao projeto</title>
+    <style>
+        /* Estilos base do seu projeto */
+        html, body {
+            height: 100%;
+            overflow: hidden;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f0f2f5 0%, #e6e9ed 100%);
+            margin: 0;
+            padding: 20px;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            box-sizing: border-box;
+        }
+
+        /* Container principal */
+        .main-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            flex: 1;
+            width: 100%;
+        }
+
+        .welcome-container {
+            text-align: center;
+            background-color: #fff;
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+            max-width: 500px;
+            width: 90%;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            z-index: 2;
+            margin-bottom: 30px;
+        }
+
+        .welcome-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Título */
+        .welcome-title {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 2.2em;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .welcome-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 80%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 4px;
+            background: linear-gradient(90deg, #2ecc71, #004aeb);
+            border-radius: 2px;
+        }
+
+        .welcome-subtitle {
+            color: #7f8c8d;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+            line-height: 1.5;
+        }
+
+        /* Botão de entrada */
+        .enter-button {
+            display: inline-block;
+            padding: 16px 45px;
+            background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.2em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(46, 204, 113, 0.4);
+            margin: 20px 0;
+        }
+
+        .enter-button:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 20px rgba(46, 204, 113, 0.5);
+        }
+
+        .enter-button:active {
+            transform: translateY(1px);
+        }
+
+        /* Rodapé */
+        .welcome-footer {
+            margin-top: 25px;
+            color: #95a5a6;
+            font-size: 0.9em;
+        }
+
+        /* Créditos dos desenvolvedores */
+        .dev-credits {
+            text-align: center;
+            color: #646b6b;
+            font-size: 1.1em;
+            font-weight: 600;
+            padding: 0 20px;
+            margin-bottom: 20px;
+            width: 100%;
+        }
+
+        .dev-names {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 8px;
+            flex-wrap: wrap;
+        }
+
+        .dev-name {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 10px 20px;
+            border-radius: 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .dev-name:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Animações */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .welcome-container {
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-8px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .enter-button {
+            animation: float 4s ease-in-out infinite;
+        }
+
+        /* Elementos decorativos */
+        .decoration {
+            position: absolute;
+            z-index: 0;
+        }
+
+        .circle-1 {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: rgba(46, 204, 113, 0.1);
+            top: 15%;
+            left: 15%;
+            animation: pulse 8s infinite alternate;
+        }
+
+        .circle-2 {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: rgba(0, 74, 235, 0.1);
+            bottom: 20%;
+            right: 15%;
+            animation: pulse 6s infinite alternate-reverse;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 0.6;
+            }
+
+            100% {
+                transform: scale(1.2);
+                opacity: 0.8;
+            }
+        }
+
+        /* Responsividade */
+        @media (max-width: 600px) {
+            body {
+                padding: 15px;
+            }
+            
+            .welcome-container {
+                padding: 30px 20px;
+                margin-bottom: 20px;
+            }
+
+            .welcome-title {
+                font-size: 1.8em;
+            }
+
+            .dev-names {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .dev-name {
+                padding: 8px 16px;
+            }
+
+            .circle-1,
+            .circle-2 {
+                display: none;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <div class="linhaFlex">
-        <div class="container esquerda">
-            <button id="toggleGravar" class="gravar botaoAcao" onclick="mudaBotaoGravar()">GRAVAR</button>
-            <button id="verHistorico" class="camera botaoAcao" onclick="verHistorico()">CÂMERA</button>
-        </div>
-        <div class="container">
+    <div class="decoration circle-1"></div>
+    <div class="decoration circle-2"></div>
 
-            <div class="camera-box active">
-                <h2>Visão do Robô</h2>
-                <img src="http://192.168.15.12:81/stream" alt="Stream da Câmera" />
+    <div class="main-container">
+        <div class="welcome-container">
+            <h1 class="welcome-title">Braço Robótico Industrial</h1>
+            <p class="welcome-subtitle">Sistema de controle e monitoramento <br> inteligente da garra robótica</p>
+
+            <div class="enter-button" onclick="
+                sessionStorage.setItem('liberado', 'true');
+                window.location.replace('../web/paginaRobo.html');
+            ">
+                Entrar no Sistema
             </div>
-            <div class="historicoAcoes" style="display: none;">
-                <div class="headerHistorico">
-                    <h2>Histórico de Ações</h2>
-                    <h3 style="text-align: left;">QUANTIDADE DE COMANDOS: <span id="quantidadeHistorico">
-                        </span>
-                        <hr>
-                    </h3>
-                </div>
-                <div id="listaHistorico" class="lista-cards">
-                    
-                </div>
+
+            <p class="welcome-footer">Clique no botão acima para acessar o painel de controle</p>
+        </div>
+
+        <div class="dev-credits">
+            <div>Apresentado pelos alunos do 3º2:</div>
+            <div class="dev-names">
+                <div class="dev-name">Felipe Volpe (Front-End Dev)</div>
+                <div class="dev-name">Leonardo Prado (Back-End Dev)</div>
             </div>
         </div>
     </div>
-
-    <script src="scripts.js"></script>
 </body>
 
 </html>

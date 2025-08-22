@@ -66,13 +66,8 @@ h1 {
     padding: 25px;
     border-radius: 12px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
     height: 100%;
     border: 2px solid #ffae00;
-}
-
-.camera-box:hover {
-    transform: translateY(-5px);
 }
 
 .camera-box h2 {
@@ -96,16 +91,12 @@ h1 {
     border-radius: 12px;
     padding: 0 25px 25px 25px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
     height: 100%;
     border: 2px solid #004aeb;
     overflow-y: scroll;
 
 }
 
-.historicoAcoes:hover {
-    transform: translateY(-5px);
-}
 
 .historicoAcoes h2 {
     color: #2c3e50;
@@ -225,6 +216,7 @@ pre {
     margin-bottom: 4px;
     font-size: large;
 }
+
 .comandoSelecionar:hover {
     border: #333 solid 1px;
 }
@@ -287,4 +279,128 @@ pre::-webkit-scrollbar-thumb {
 
 pre::-webkit-scrollbar-thumb:hover {
     background: #95a5a6;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal.active {
+    display: flex;
+    opacity: 1;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 30px;
+    width: 90%;
+    max-width: 400px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transform: translateY(-20px);
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+.modal.active .modal-content {
+    transform: translateY(0);
+}
+
+.modal-content h3 {
+    color: #2c3e50;
+    margin: 0 0 20px 0;
+    font-size: 1.5em;
+    text-align: center;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #f0f2f5;
+}
+
+#novoNomeInput {
+    width: 100%;
+    padding: 14px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 1em;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+#novoNomeInput:focus {
+    outline: none;
+    border-color: #ffc107af;
+    box-shadow: 0 0 0 3px rgba(242, 184, 9, 0.308);
+}
+
+.botoes {
+    display: flex;
+    justify-content: space-between;
+}
+
+.botoes button {
+    padding: 12px 24px;
+    width: 45%;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.95em;
+}
+
+.botoes button:first-child {
+    background: linear-gradient(135deg, #ffca28 0%, #ffc107 100%);
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.botoes button:first-child:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(255, 193, 7, 0.4);
+}
+
+.botoes button:last-child {
+    background: #fdecea;
+    /* tom mais suave próximo do vermelho */
+    color: #e74c3c;
+    /* texto vermelho */
+    border: 1px solid red;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.botoes button:last-child:hover {
+    background: #f9d6d0;
+    /* hover um pouco mais escuro */
+    transform: translateY(-2px);
+}
+
+
+/* Ícone de fechar */
+.fechar-modal {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 1.5em;
+    cursor: pointer;
+    color: #95a5a6;
+    transition: color 0.3s ease;
+}
+
+.fechar-modal:hover {
+    color: #e74c3c;
 }
