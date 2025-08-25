@@ -183,48 +183,48 @@ function confirmarExcluir() {
 }
 
 function getHistoricoComandos() {
-    fetch('http://localhost:5000/listar_comandos_gravados')
-        .then(response => response.json())
-        .then(data => listaHistoricoComandos(data.arquivos, data.quantidade))
-        .catch(error => console.error('Erro ao buscar histórico:', error));
+    // fetch('http://localhost:5000/listar_comandos_gravados')
+    //     .then(response => response.json())
+    //     .then(data => listaHistoricoComandos(data.arquivos, data.quantidade))
+    //     .catch(error => console.error('Erro ao buscar histórico:', error));
 
     //TESTE ABAIXO
 
-    // const data = {
-    //     "arquivos": [
-    //         "comando_20250729_140003.json",
-    //         "comando_20250729_134930.json",
-    //         "comando_20250729_134149.json",
-    //         "comando_20250729_133602.json",
-    //         "comando_20250729_133310.json",
-    //         "comando_20250729_131609.json",
-    //         "comando_20250728_144314.json",
-    //         "comando_20250728_142835.json",
-    //         "comando_20250728_142635.json",
-    //         "comando_20250728_142547.json",
-    //         "comando_20250728_142002.json",
-    //         "comando_20250728_141540.json",
-    //         "comando_20250728_141335.json",
-    //         "comando_20250728_141228.json",
-    //         "comando_20250729_140003.json",
-    //         "comando_20250729_134930.json",
-    //         "comando_20250729_134149.json",
-    //         "comando_20250729_133602.json",
-    //         "comando_20250729_133310.json",
-    //         "comando_20250729_131609.json",
-    //         "comando_20250728_144314.json",
-    //         "comando_20250728_142835.json",
-    //         "comando_20250728_142635.json",
-    //         "comando_20250728_142547.json",
-    //         "comando_20250728_142002.json",
-    //         "comando_20250728_141540.json",
-    //         "comando_20250728_141335.json",
-    //         "comando_20250728_141228.json",
-    //         "comando_20250728_141205.json"
-    //     ],
-    //     "quantidade": 15,
-    //     "status": "sucesso"
-    // };
+    const data = {
+        "arquivos": [
+            "comando_20250729_140003.json",
+            "comando_20250729_134930.json",
+            "comando_20250729_134149.json",
+            "comando_20250729_133602.json",
+            "comando_20250729_133310.json",
+            "comando_20250729_131609.json",
+            "comando_20250728_144314.json",
+            "comando_20250728_142835.json",
+            "comando_20250728_142635.json",
+            "comando_20250728_142547.json",
+            "comando_20250728_142002.json",
+            "comando_20250728_141540.json",
+            "comando_20250728_141335.json",
+            "comando_20250728_141228.json",
+            "comando_20250729_140003.json",
+            "comando_20250729_134930.json",
+            "comando_20250729_134149.json",
+            "comando_20250729_133602.json",
+            "comando_20250729_133310.json",
+            "comando_20250729_131609.json",
+            "comando_20250728_144314.json",
+            "comando_20250728_142835.json",
+            "comando_20250728_142635.json",
+            "comando_20250728_142547.json",
+            "comando_20250728_142002.json",
+            "comando_20250728_141540.json",
+            "comando_20250728_141335.json",
+            "comando_20250728_141228.json",
+            "comando_20250728_141205.json"
+        ],
+        "quantidade": 15,
+        "status": "sucesso"
+    };
     listaHistoricoComandos(data.arquivos, data.quantidade);
 }
 
