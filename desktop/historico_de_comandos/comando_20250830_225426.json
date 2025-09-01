@@ -1,0 +1,241 @@
+[
+  {
+    "timestamp": "2025-08-30 22:54:27.532456",
+    "comando": {
+      "Y": {
+        "sentido": "tras",
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-30 22:54:27.661739",
+    "comando": {
+      "Y": {
+        "sentido": "tras",
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-30 22:54:27.790761",
+    "comando": {
+      "Y": {
+        "sentido": "tras",
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-30 22:54:27.920260",
+    "comando": {
+      "Y": {
+        "sentido": "tras",
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-30 22:54:28.049638",
+    "comando": {
+      "Y": {
+        "sentido": "tras",
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-30 22:54:28.180853",
+    "comando": {
+      "Y": {
+        "sentido": "tras",
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-30 22:54:28.635169",
+    "comando": {
+      "Y": {
+        "sentido": "frente",
+        "passos": 8
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-30 22:54:28.765711",
+    "comando": {
+      "Y": {
+        "sentido": "frente",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-30 22:54:28.895479",
+    "comando": {
+      "Y": {
+        "sentido": "frente",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-30 22:54:29.026660",
+    "comando": {
+      "Y": {
+        "sentido": "frente",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-30 22:54:29.157079",
+    "comando": {
+      "Y": {
+        "sentido": "frente",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-30 22:54:29.304199",
+    "comando": {
+      "Y": {
+        "sentido": "frente",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-30 22:54:29.434091",
+    "comando": {
+      "Y": {
+        "sentido": "frente",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-30 22:54:29.564297",
+    "comando": {
+      "Y": {
+        "sentido": "frente",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-30 22:54:29.894898",
+    "comando": {
+      "Z": {
+        "sentido": "frente",
+        "passos": 10
+      },
+      "GA": {
+        "sentido": "tras",
+        "passos": 5
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-30 22:54:30.025264",
+    "comando": {
+      "Z": {
+        "sentido": "frente",
+        "passos": 10
+      },
+      "GA": {
+        "sentido": "tras",
+        "passos": 5
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-30 22:54:30.154911",
+    "comando": {
+      "Z": {
+        "sentido": "frente",
+        "passos": 10
+      },
+      "GA": {
+        "sentido": "tras",
+        "passos": 5
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-30 22:54:30.285043",
+    "comando": {
+      "Z": {
+        "sentido": "frente",
+        "passos": 10
+      },
+      "GA": {
+        "sentido": "tras",
+        "passos": 5
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-30 22:54:30.414862",
+    "comando": {
+      "Z": {
+        "sentido": "frente",
+        "passos": 10
+      },
+      "GA": {
+        "sentido": "tras",
+        "passos": 5
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-30 22:54:30.546260",
+    "comando": {
+      "Z": {
+        "sentido": "frente",
+        "passos": 10
+      },
+      "GA": {
+        "sentido": "tras",
+        "passos": 5
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-30 22:54:30.676373",
+    "comando": {
+      "Z": {
+        "sentido": "frente",
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-30 22:54:31.307651",
+    "comando": {
+      "Z": {
+        "sentido": "frente",
+        "passos": 5
+      },
+      "GA": {
+        "sentido": "frente",
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-30 22:54:31.438365",
+    "comando": {
+      "Z": {
+        "sentido": "frente",
+        "passos": 5
+      },
+      "GA": {
+        "sentido": "frente",
+        "passos": 10
+      }
+    }
+  }
+]

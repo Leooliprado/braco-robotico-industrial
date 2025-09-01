@@ -1,0 +1,3080 @@
+[
+  {
+    "timestamp": "2025-08-23 20:50:57.577101",
+    "comando": {
+      "X": {
+        "sentido": "tras",
+        "passos": 8
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:50:57.678464",
+    "comando": {
+      "X": {
+        "sentido": "tras",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:50:57.779934",
+    "comando": {
+      "X": {
+        "sentido": "tras",
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:50:57.881312",
+    "comando": {
+      "X": {
+        "sentido": "tras",
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:50:57.982725",
+    "comando": {
+      "X": {
+        "sentido": "tras",
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:50:58.084416",
+    "comando": {
+      "X": {
+        "sentido": "tras",
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:50:58.185829",
+    "comando": {
+      "X": {
+        "sentido": "tras",
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:50:58.287474",
+    "comando": {
+      "X": {
+        "sentido": "tras",
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:50:58.388959",
+    "comando": {
+      "X": {
+        "sentido": "tras",
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:50:58.490549",
+    "comando": {
+      "X": {
+        "sentido": "tras",
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:50:58.592244",
+    "comando": {
+      "X": {
+        "sentido": "tras",
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:50:58.693860",
+    "comando": {
+      "X": {
+        "sentido": "tras",
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:50:58.996023",
+    "comando": {
+      "X": {
+        "sentido": "frente",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:50:59.097677",
+    "comando": {
+      "X": {
+        "sentido": "frente",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:50:59.199400",
+    "comando": {
+      "X": {
+        "sentido": "frente",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:50:59.301138",
+    "comando": {
+      "X": {
+        "sentido": "frente",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:50:59.402974",
+    "comando": {
+      "X": {
+        "sentido": "frente",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:50:59.504739",
+    "comando": {
+      "X": {
+        "sentido": "frente",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:50:59.606427",
+    "comando": {
+      "X": {
+        "sentido": "frente",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:50:59.708466",
+    "comando": {
+      "X": {
+        "sentido": "frente",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:50:59.810340",
+    "comando": {
+      "X": {
+        "sentido": "frente",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:50:59.912406",
+    "comando": {
+      "X": {
+        "sentido": "frente",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:00.014311",
+    "comando": {
+      "X": {
+        "sentido": "frente",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:00.116340",
+    "comando": {
+      "X": {
+        "sentido": "frente",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:00.218328",
+    "comando": {
+      "X": {
+        "sentido": "frente",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:00.320353",
+    "comando": {
+      "X": {
+        "sentido": "frente",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:00.422227",
+    "comando": {
+      "X": {
+        "sentido": "frente",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:00.524360",
+    "comando": {
+      "X": {
+        "sentido": "frente",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:00.626329",
+    "comando": {
+      "X": {
+        "sentido": "frente",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:00.728502",
+    "comando": {
+      "X": {
+        "sentido": "frente",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:00.830407",
+    "comando": {
+      "X": {
+        "sentido": "frente",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:00.932359",
+    "comando": {
+      "X": {
+        "sentido": "frente",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:01.069814",
+    "comando": {
+      "X": {
+        "sentido": "frente",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:01.171802",
+    "comando": {
+      "X": {
+        "sentido": "frente",
+        "passos": 8
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:01.674670",
+    "comando": {
+      "X": {
+        "sentido": "tras",
+        "passos": 5
+      },
+      "Y": {
+        "sentido": "frente",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:01.777044",
+    "comando": {
+      "X": {
+        "sentido": "tras",
+        "passos": 5
+      },
+      "Y": {
+        "sentido": "frente",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:01.879233",
+    "comando": {
+      "X": {
+        "sentido": "tras",
+        "passos": 5
+      },
+      "Y": {
+        "sentido": "frente",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:01.981328",
+    "comando": {
+      "X": {
+        "sentido": "tras",
+        "passos": 5
+      },
+      "Y": {
+        "sentido": "frente",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:02.083623",
+    "comando": {
+      "X": {
+        "sentido": "tras",
+        "passos": 5
+      },
+      "Y": {
+        "sentido": "frente",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:02.185678",
+    "comando": {
+      "X": {
+        "sentido": "tras",
+        "passos": 5
+      },
+      "Y": {
+        "sentido": "frente",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:02.288093",
+    "comando": {
+      "X": {
+        "sentido": "tras",
+        "passos": 5
+      },
+      "Y": {
+        "sentido": "frente",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:02.390326",
+    "comando": {
+      "X": {
+        "sentido": "tras",
+        "passos": 5
+      },
+      "Y": {
+        "sentido": "frente",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:02.492993",
+    "comando": {
+      "X": {
+        "sentido": "tras",
+        "passos": 5
+      },
+      "Y": {
+        "sentido": "frente",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:02.595891",
+    "comando": {
+      "X": {
+        "sentido": "tras",
+        "passos": 5
+      },
+      "Y": {
+        "sentido": "frente",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:02.698108",
+    "comando": {
+      "X": {
+        "sentido": "tras",
+        "passos": 5
+      },
+      "Y": {
+        "sentido": "frente",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:02.800663",
+    "comando": {
+      "X": {
+        "sentido": "tras",
+        "passos": 5
+      },
+      "Y": {
+        "sentido": "frente",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:02.903195",
+    "comando": {
+      "Y": {
+        "sentido": "frente",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:03.005533",
+    "comando": {
+      "Y": {
+        "sentido": "frente",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:03.108017",
+    "comando": {
+      "Y": {
+        "sentido": "frente",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:03.410867",
+    "comando": {
+      "Y": {
+        "sentido": "frente",
+        "passos": 7
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:03.513399",
+    "comando": {
+      "Y": {
+        "sentido": "frente",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:03.615940",
+    "comando": {
+      "Y": {
+        "sentido": "frente",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:03.718504",
+    "comando": {
+      "Y": {
+        "sentido": "frente",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:03.821212",
+    "comando": {
+      "Y": {
+        "sentido": "frente",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:03.923695",
+    "comando": {
+      "Y": {
+        "sentido": "frente",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:04.026420",
+    "comando": {
+      "Y": {
+        "sentido": "frente",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:04.129090",
+    "comando": {
+      "Y": {
+        "sentido": "frente",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:04.231941",
+    "comando": {
+      "Y": {
+        "sentido": "frente",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:04.334542",
+    "comando": {
+      "Y": {
+        "sentido": "frente",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:04.437437",
+    "comando": {
+      "Y": {
+        "sentido": "frente",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:04.540074",
+    "comando": {
+      "Y": {
+        "sentido": "frente",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:04.643042",
+    "comando": {
+      "Y": {
+        "sentido": "frente",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:04.745792",
+    "comando": {
+      "Y": {
+        "sentido": "frente",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:04.848463",
+    "comando": {
+      "Y": {
+        "sentido": "frente",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:04.951171",
+    "comando": {
+      "Y": {
+        "sentido": "frente",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:05.054101",
+    "comando": {
+      "Y": {
+        "sentido": "frente",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:05.157038",
+    "comando": {
+      "Y": {
+        "sentido": "frente",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:05.259826",
+    "comando": {
+      "Y": {
+        "sentido": "frente",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:05.362629",
+    "comando": {
+      "Y": {
+        "sentido": "frente",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:05.465645",
+    "comando": {
+      "Y": {
+        "sentido": "frente",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:05.568432",
+    "comando": {
+      "Y": {
+        "sentido": "frente",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:05.671441",
+    "comando": {
+      "Y": {
+        "sentido": "frente",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:05.774521",
+    "comando": {
+      "Y": {
+        "sentido": "frente",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:05.877660",
+    "comando": {
+      "Y": {
+        "sentido": "frente",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:05.980555",
+    "comando": {
+      "Y": {
+        "sentido": "frente",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:06.419621",
+    "comando": {
+      "Z": {
+        "sentido": "frente",
+        "passos": 7
+      },
+      "GA": {
+        "sentido": "frente",
+        "passos": 7
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:06.522351",
+    "comando": {
+      "Z": {
+        "sentido": "frente",
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:06.625292",
+    "comando": {
+      "Z": {
+        "sentido": "frente",
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:06.728335",
+    "comando": {
+      "Z": {
+        "sentido": "frente",
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:06.831331",
+    "comando": {
+      "Z": {
+        "sentido": "frente",
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:06.934270",
+    "comando": {
+      "Z": {
+        "sentido": "frente",
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:07.037279",
+    "comando": {
+      "Z": {
+        "sentido": "frente",
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:07.139750",
+    "comando": {
+      "Z": {
+        "sentido": "frente",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:07.543164",
+    "comando": {
+      "GA": {
+        "sentido": "tras",
+        "passos": 7
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:07.646277",
+    "comando": {
+      "GA": {
+        "sentido": "tras",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:08.250435",
+    "comando": {
+      "GA": {
+        "sentido": "frente",
+        "passos": 5
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:08.353999",
+    "comando": {
+      "Z": {
+        "sentido": "frente",
+        "passos": 7
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:08.457628",
+    "comando": {
+      "Z": {
+        "sentido": "frente",
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:08.560891",
+    "comando": {
+      "Z": {
+        "sentido": "frente",
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:08.664023",
+    "comando": {
+      "Z": {
+        "sentido": "frente",
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:08.767127",
+    "comando": {
+      "Z": {
+        "sentido": "frente",
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:08.870263",
+    "comando": {
+      "Z": {
+        "sentido": "frente",
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:08.973600",
+    "comando": {
+      "Z": {
+        "sentido": "frente",
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:09.076931",
+    "comando": {
+      "Z": {
+        "sentido": "frente",
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:09.180209",
+    "comando": {
+      "Z": {
+        "sentido": "frente",
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:09.283624",
+    "comando": {
+      "Z": {
+        "sentido": "frente",
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:09.386961",
+    "comando": {
+      "Z": {
+        "sentido": "frente",
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:09.490125",
+    "comando": {
+      "Z": {
+        "sentido": "frente",
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:09.593669",
+    "comando": {
+      "Z": {
+        "sentido": "frente",
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:09.697618",
+    "comando": {
+      "Z": {
+        "sentido": "frente",
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:09.800880",
+    "comando": {
+      "Z": {
+        "sentido": "frente",
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:09.904683",
+    "comando": {
+      "Z": {
+        "sentido": "frente",
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:10.007873",
+    "comando": {
+      "Z": {
+        "sentido": "frente",
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:10.110766",
+    "comando": {
+      "Z": {
+        "sentido": "frente",
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:10.214062",
+    "comando": {
+      "Z": {
+        "sentido": "frente",
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:10.317728",
+    "comando": {
+      "Z": {
+        "sentido": "frente",
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:10.421360",
+    "comando": {
+      "Z": {
+        "sentido": "frente",
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:10.524829",
+    "comando": {
+      "Z": {
+        "sentido": "frente",
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:10.628626",
+    "comando": {
+      "Z": {
+        "sentido": "frente",
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:10.732009",
+    "comando": {
+      "Z": {
+        "sentido": "frente",
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:10.835949",
+    "comando": {
+      "Z": {
+        "sentido": "frente",
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:10.939664",
+    "comando": {
+      "Z": {
+        "sentido": "frente",
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:11.043275",
+    "comando": {
+      "Z": {
+        "sentido": "frente",
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:11.182187",
+    "comando": {
+      "Z": {
+        "sentido": "frente",
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:11.286055",
+    "comando": {
+      "Z": {
+        "sentido": "frente",
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:11.389740",
+    "comando": {
+      "Z": {
+        "sentido": "frente",
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:11.493321",
+    "comando": {
+      "Z": {
+        "sentido": "frente",
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:11.597233",
+    "comando": {
+      "GA": {
+        "sentido": "frente",
+        "passos": 5
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:11.701158",
+    "comando": {
+      "GA": {
+        "sentido": "frente",
+        "passos": 6
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:11.905334",
+    "comando": {
+      "Y": {
+        "sentido": "frente",
+        "passos": 7
+      },
+      "GA": {
+        "sentido": "frente",
+        "passos": 6
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:12.009356",
+    "comando": {
+      "Y": {
+        "sentido": "frente",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:12.113518",
+    "comando": {
+      "Y": {
+        "sentido": "frente",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:12.217136",
+    "comando": {
+      "Y": {
+        "sentido": "frente",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:12.321374",
+    "comando": {
+      "Y": {
+        "sentido": "frente",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:12.425386",
+    "comando": {
+      "Y": {
+        "sentido": "frente",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:12.529397",
+    "comando": {
+      "Y": {
+        "sentido": "frente",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:12.632997",
+    "comando": {
+      "Y": {
+        "sentido": "frente",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:12.737096",
+    "comando": {
+      "Y": {
+        "sentido": "frente",
+        "passos": 9
+      },
+      "GA": {
+        "sentido": "frente",
+        "passos": 5
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:12.841103",
+    "comando": {
+      "Y": {
+        "sentido": "frente",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:12.944816",
+    "comando": {
+      "Y": {
+        "sentido": "frente",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:13.048767",
+    "comando": {
+      "Y": {
+        "sentido": "frente",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:13.152896",
+    "comando": {
+      "Y": {
+        "sentido": "frente",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:13.257108",
+    "comando": {
+      "Y": {
+        "sentido": "frente",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:13.360966",
+    "comando": {
+      "Y": {
+        "sentido": "frente",
+        "passos": 7
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:13.966065",
+    "comando": {
+      "Y": {
+        "sentido": "tras",
+        "passos": 8
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:14.070476",
+    "comando": {
+      "Y": {
+        "sentido": "tras",
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:14.174537",
+    "comando": {
+      "Y": {
+        "sentido": "tras",
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:14.278548",
+    "comando": {
+      "Y": {
+        "sentido": "tras",
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:14.382705",
+    "comando": {
+      "Y": {
+        "sentido": "tras",
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:14.486599",
+    "comando": {
+      "Y": {
+        "sentido": "tras",
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:14.590537",
+    "comando": {
+      "Y": {
+        "sentido": "tras",
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:14.694480",
+    "comando": {
+      "Y": {
+        "sentido": "tras",
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:14.798474",
+    "comando": {
+      "Y": {
+        "sentido": "tras",
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:14.902693",
+    "comando": {
+      "Y": {
+        "sentido": "tras",
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:15.006793",
+    "comando": {
+      "Y": {
+        "sentido": "tras",
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:15.110935",
+    "comando": {
+      "Y": {
+        "sentido": "tras",
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:15.215012",
+    "comando": {
+      "Y": {
+        "sentido": "tras",
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:15.319087",
+    "comando": {
+      "Y": {
+        "sentido": "tras",
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:15.423378",
+    "comando": {
+      "Y": {
+        "sentido": "tras",
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:15.527593",
+    "comando": {
+      "Y": {
+        "sentido": "tras",
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:15.631863",
+    "comando": {
+      "Y": {
+        "sentido": "tras",
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:15.736138",
+    "comando": {
+      "Y": {
+        "sentido": "tras",
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:15.872028",
+    "comando": {
+      "Y": {
+        "sentido": "tras",
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:15.976349",
+    "comando": {
+      "Y": {
+        "sentido": "tras",
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:16.080626",
+    "comando": {
+      "Y": {
+        "sentido": "tras",
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:16.220670",
+    "comando": {
+      "Y": {
+        "sentido": "tras",
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:16.325148",
+    "comando": {
+      "Y": {
+        "sentido": "tras",
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:16.429429",
+    "comando": {
+      "Y": {
+        "sentido": "tras",
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:16.634169",
+    "comando": {
+      "GA": {
+        "sentido": "tras",
+        "passos": 6
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:16.738986",
+    "comando": {
+      "GA": {
+        "sentido": "tras",
+        "passos": 7
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:17.344578",
+    "comando": {
+      "Y": {
+        "sentido": "tras",
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:17.449350",
+    "comando": {
+      "Y": {
+        "sentido": "tras",
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:17.553653",
+    "comando": {
+      "Y": {
+        "sentido": "tras",
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:17.657999",
+    "comando": {
+      "Y": {
+        "sentido": "tras",
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:17.762648",
+    "comando": {
+      "Y": {
+        "sentido": "tras",
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:17.866945",
+    "comando": {
+      "Y": {
+        "sentido": "tras",
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:17.971330",
+    "comando": {
+      "Y": {
+        "sentido": "tras",
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:18.075756",
+    "comando": {
+      "Y": {
+        "sentido": "tras",
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:18.180647",
+    "comando": {
+      "Y": {
+        "sentido": "tras",
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:18.285224",
+    "comando": {
+      "Y": {
+        "sentido": "tras",
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:18.389864",
+    "comando": {
+      "Y": {
+        "sentido": "tras",
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:18.494391",
+    "comando": {
+      "Y": {
+        "sentido": "tras",
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:18.599147",
+    "comando": {
+      "Y": {
+        "sentido": "tras",
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:18.703954",
+    "comando": {
+      "Y": {
+        "sentido": "tras",
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:18.808623",
+    "comando": {
+      "Y": {
+        "sentido": "tras",
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:18.913635",
+    "comando": {
+      "Y": {
+        "sentido": "tras",
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:19.118863",
+    "comando": {
+      "Y": {
+        "sentido": "tras",
+        "passos": 5
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:19.223632",
+    "comando": {
+      "Y": {
+        "sentido": "tras",
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:19.328413",
+    "comando": {
+      "Y": {
+        "sentido": "tras",
+        "passos": 8
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:19.533621",
+    "comando": {
+      "Z": {
+        "sentido": "tras",
+        "passos": 9
+      },
+      "GA": {
+        "sentido": "frente",
+        "passos": 6
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:19.638717",
+    "comando": {
+      "Z": {
+        "sentido": "tras",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:19.743360",
+    "comando": {
+      "Z": {
+        "sentido": "tras",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:19.848620",
+    "comando": {
+      "Z": {
+        "sentido": "tras",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:19.953572",
+    "comando": {
+      "Z": {
+        "sentido": "tras",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:20.058480",
+    "comando": {
+      "Z": {
+        "sentido": "tras",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:20.163783",
+    "comando": {
+      "Z": {
+        "sentido": "tras",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:20.268439",
+    "comando": {
+      "Z": {
+        "sentido": "tras",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:20.373521",
+    "comando": {
+      "Z": {
+        "sentido": "tras",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:20.478842",
+    "comando": {
+      "Z": {
+        "sentido": "tras",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:20.583880",
+    "comando": {
+      "Z": {
+        "sentido": "tras",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:20.688940",
+    "comando": {
+      "Z": {
+        "sentido": "tras",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:20.793913",
+    "comando": {
+      "Z": {
+        "sentido": "tras",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:20.899143",
+    "comando": {
+      "Z": {
+        "sentido": "tras",
+        "passos": 9
+      },
+      "GA": {
+        "sentido": "frente",
+        "passos": 7
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:21.020735",
+    "comando": {
+      "Z": {
+        "sentido": "tras",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:21.125859",
+    "comando": {
+      "Z": {
+        "sentido": "tras",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:21.267080",
+    "comando": {
+      "Z": {
+        "sentido": "tras",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:21.372231",
+    "comando": {
+      "Z": {
+        "sentido": "tras",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:21.477422",
+    "comando": {
+      "Z": {
+        "sentido": "tras",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:21.582425",
+    "comando": {
+      "Z": {
+        "sentido": "tras",
+        "passos": 9
+      },
+      "GA": {
+        "sentido": "tras",
+        "passos": 6
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:21.888439",
+    "comando": {
+      "GA": {
+        "sentido": "tras",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:21.993631",
+    "comando": {
+      "GA": {
+        "sentido": "tras",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:22.099074",
+    "comando": {
+      "GA": {
+        "sentido": "tras",
+        "passos": 7
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:22.605161",
+    "comando": {
+      "Y": {
+        "sentido": "frente",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:22.710347",
+    "comando": {
+      "Y": {
+        "sentido": "frente",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:23.617590",
+    "comando": {
+      "Y": {
+        "sentido": "tras",
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:23.723267",
+    "comando": {
+      "Y": {
+        "sentido": "tras",
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:23.828472",
+    "comando": {
+      "Y": {
+        "sentido": "tras",
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:23.933712",
+    "comando": {
+      "Y": {
+        "sentido": "tras",
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:24.039021",
+    "comando": {
+      "Y": {
+        "sentido": "tras",
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:24.144304",
+    "comando": {
+      "Y": {
+        "sentido": "tras",
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:24.450202",
+    "comando": {
+      "Z": {
+        "sentido": "tras",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:24.555801",
+    "comando": {
+      "Z": {
+        "sentido": "tras",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:24.661409",
+    "comando": {
+      "Z": {
+        "sentido": "tras",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:24.767150",
+    "comando": {
+      "Z": {
+        "sentido": "tras",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:24.872826",
+    "comando": {
+      "Z": {
+        "sentido": "tras",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:24.978277",
+    "comando": {
+      "Z": {
+        "sentido": "tras",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:25.084026",
+    "comando": {
+      "Z": {
+        "sentido": "tras",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:25.189533",
+    "comando": {
+      "Z": {
+        "sentido": "tras",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:25.295316",
+    "comando": {
+      "Z": {
+        "sentido": "tras",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:25.400784",
+    "comando": {
+      "Z": {
+        "sentido": "tras",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:25.506304",
+    "comando": {
+      "Z": {
+        "sentido": "tras",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:25.612038",
+    "comando": {
+      "Z": {
+        "sentido": "tras",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:25.717583",
+    "comando": {
+      "Z": {
+        "sentido": "tras",
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:26.224440",
+    "comando": {
+      "GA": {
+        "sentido": "tras",
+        "passos": 5
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:27.167943",
+    "comando": {
+      "GA2": {
+        "sentido": "frente",
+        "agulo": 90,
+        "passos": 2
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:27.273547",
+    "comando": {
+      "GA2": {
+        "sentido": "frente",
+        "agulo": 90,
+        "passos": 9
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:27.379421",
+    "comando": {
+      "GA2": {
+        "sentido": "frente",
+        "agulo": 90,
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:27.485705",
+    "comando": {
+      "GA2": {
+        "sentido": "frente",
+        "agulo": 90,
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:27.591857",
+    "comando": {
+      "GA2": {
+        "sentido": "frente",
+        "agulo": 90,
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:27.697464",
+    "comando": {
+      "GA2": {
+        "sentido": "frente",
+        "agulo": 90,
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:27.803646",
+    "comando": {
+      "GA2": {
+        "sentido": "frente",
+        "agulo": 90,
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:27.909677",
+    "comando": {
+      "GA2": {
+        "sentido": "frente",
+        "agulo": 90,
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:28.016027",
+    "comando": {
+      "GA2": {
+        "sentido": "frente",
+        "agulo": 90,
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:28.122894",
+    "comando": {
+      "GA2": {
+        "sentido": "frente",
+        "agulo": 90,
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:28.228842",
+    "comando": {
+      "GA2": {
+        "sentido": "frente",
+        "agulo": 90,
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:28.335536",
+    "comando": {
+      "GA2": {
+        "sentido": "frente",
+        "agulo": 90,
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:28.441335",
+    "comando": {
+      "GA2": {
+        "sentido": "frente",
+        "agulo": 90,
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:28.547425",
+    "comando": {
+      "GA2": {
+        "sentido": "frente",
+        "agulo": 90,
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:28.653352",
+    "comando": {
+      "GA2": {
+        "sentido": "frente",
+        "agulo": 90,
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:28.759557",
+    "comando": {
+      "GA2": {
+        "sentido": "frente",
+        "agulo": 90,
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:28.865732",
+    "comando": {
+      "GA2": {
+        "sentido": "frente",
+        "agulo": 90,
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:28.971569",
+    "comando": {
+      "GA2": {
+        "sentido": "frente",
+        "agulo": 90,
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:29.077270",
+    "comando": {
+      "GA2": {
+        "sentido": "frente",
+        "agulo": 90,
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:29.183523",
+    "comando": {
+      "GA2": {
+        "sentido": "frente",
+        "agulo": 90,
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:29.289992",
+    "comando": {
+      "GA2": {
+        "sentido": "frente",
+        "agulo": 90,
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:29.396161",
+    "comando": {
+      "GA2": {
+        "sentido": "frente",
+        "agulo": 90,
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:29.502574",
+    "comando": {
+      "GA2": {
+        "sentido": "frente",
+        "agulo": 90,
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:29.608672",
+    "comando": {
+      "GA2": {
+        "sentido": "frente",
+        "agulo": 90,
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:29.714849",
+    "comando": {
+      "GA2": {
+        "sentido": "frente",
+        "agulo": 90,
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:29.821027",
+    "comando": {
+      "GA2": {
+        "sentido": "frente",
+        "agulo": 90,
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:29.927208",
+    "comando": {
+      "GA2": {
+        "sentido": "frente",
+        "agulo": 90,
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:30.033352",
+    "comando": {
+      "GA2": {
+        "sentido": "frente",
+        "agulo": 90,
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:30.139651",
+    "comando": {
+      "GA2": {
+        "sentido": "frente",
+        "agulo": 90,
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:30.245653",
+    "comando": {
+      "GA2": {
+        "sentido": "frente",
+        "agulo": 90,
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:30.352266",
+    "comando": {
+      "GA2": {
+        "sentido": "frente",
+        "agulo": 90,
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:30.458547",
+    "comando": {
+      "GA2": {
+        "sentido": "frente",
+        "agulo": 90,
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:30.564871",
+    "comando": {
+      "GA2": {
+        "sentido": "frente",
+        "agulo": 90,
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:30.671421",
+    "comando": {
+      "GA2": {
+        "sentido": "frente",
+        "agulo": 90,
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:30.777914",
+    "comando": {
+      "GA2": {
+        "sentido": "frente",
+        "agulo": 90,
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:30.884021",
+    "comando": {
+      "GA2": {
+        "sentido": "frente",
+        "agulo": 90,
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:30.990374",
+    "comando": {
+      "GA2": {
+        "sentido": "frente",
+        "agulo": 90,
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:31.096634",
+    "comando": {
+      "GA2": {
+        "sentido": "frente",
+        "agulo": 90,
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:31.503747",
+    "comando": {
+      "GA2": {
+        "sentido": "tras",
+        "agulo": 90,
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:31.610239",
+    "comando": {
+      "GA2": {
+        "sentido": "tras",
+        "agulo": 90,
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:31.716491",
+    "comando": {
+      "GA2": {
+        "sentido": "tras",
+        "agulo": 90,
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:31.823208",
+    "comando": {
+      "GA2": {
+        "sentido": "tras",
+        "agulo": 90,
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:31.929371",
+    "comando": {
+      "GA2": {
+        "sentido": "tras",
+        "agulo": 90,
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:32.035691",
+    "comando": {
+      "GA2": {
+        "sentido": "tras",
+        "agulo": 90,
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:32.142038",
+    "comando": {
+      "GA2": {
+        "sentido": "tras",
+        "agulo": 90,
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:32.249054",
+    "comando": {
+      "GA2": {
+        "sentido": "tras",
+        "agulo": 90,
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:32.355859",
+    "comando": {
+      "GA2": {
+        "sentido": "tras",
+        "agulo": 90,
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:32.462745",
+    "comando": {
+      "GA2": {
+        "sentido": "tras",
+        "agulo": 90,
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:32.569394",
+    "comando": {
+      "GA2": {
+        "sentido": "tras",
+        "agulo": 90,
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:32.675674",
+    "comando": {
+      "GA2": {
+        "sentido": "tras",
+        "agulo": 90,
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:32.782194",
+    "comando": {
+      "GA2": {
+        "sentido": "tras",
+        "agulo": 90,
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:32.888835",
+    "comando": {
+      "GA2": {
+        "sentido": "tras",
+        "agulo": 90,
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:32.995497",
+    "comando": {
+      "GA2": {
+        "sentido": "tras",
+        "agulo": 90,
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:33.102293",
+    "comando": {
+      "GA2": {
+        "sentido": "tras",
+        "agulo": 90,
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:33.208924",
+    "comando": {
+      "GA2": {
+        "sentido": "tras",
+        "agulo": 90,
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:33.315532",
+    "comando": {
+      "GA2": {
+        "sentido": "tras",
+        "agulo": 90,
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:33.422238",
+    "comando": {
+      "GA2": {
+        "sentido": "tras",
+        "agulo": 90,
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:33.528665",
+    "comando": {
+      "GA2": {
+        "sentido": "tras",
+        "agulo": 90,
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:33.635470",
+    "comando": {
+      "GA2": {
+        "sentido": "tras",
+        "agulo": 90,
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:33.742282",
+    "comando": {
+      "GA2": {
+        "sentido": "tras",
+        "agulo": 90,
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:33.849069",
+    "comando": {
+      "GA2": {
+        "sentido": "tras",
+        "agulo": 90,
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:33.955953",
+    "comando": {
+      "GA2": {
+        "sentido": "tras",
+        "agulo": 90,
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:34.062589",
+    "comando": {
+      "GA2": {
+        "sentido": "tras",
+        "agulo": 90,
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:34.169674",
+    "comando": {
+      "GA2": {
+        "sentido": "tras",
+        "agulo": 90,
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:34.276626",
+    "comando": {
+      "GA2": {
+        "sentido": "tras",
+        "agulo": 90,
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:34.383303",
+    "comando": {
+      "GA2": {
+        "sentido": "tras",
+        "agulo": 90,
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:34.490332",
+    "comando": {
+      "GA2": {
+        "sentido": "tras",
+        "agulo": 90,
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:34.597449",
+    "comando": {
+      "GA2": {
+        "sentido": "tras",
+        "agulo": 90,
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:34.704611",
+    "comando": {
+      "GA2": {
+        "sentido": "tras",
+        "agulo": 90,
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:34.811611",
+    "comando": {
+      "GA2": {
+        "sentido": "tras",
+        "agulo": 90,
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:34.918477",
+    "comando": {
+      "GA2": {
+        "sentido": "tras",
+        "agulo": 90,
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:35.025453",
+    "comando": {
+      "GA2": {
+        "sentido": "tras",
+        "agulo": 90,
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:35.132720",
+    "comando": {
+      "GA2": {
+        "sentido": "tras",
+        "agulo": 90,
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:35.239818",
+    "comando": {
+      "GA2": {
+        "sentido": "tras",
+        "agulo": 90,
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:35.346908",
+    "comando": {
+      "GA2": {
+        "sentido": "tras",
+        "agulo": 90,
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:35.453851",
+    "comando": {
+      "GA2": {
+        "sentido": "tras",
+        "agulo": 90,
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:35.560975",
+    "comando": {
+      "GA2": {
+        "sentido": "tras",
+        "agulo": 90,
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:35.668136",
+    "comando": {
+      "GA2": {
+        "sentido": "tras",
+        "agulo": 90,
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:35.775213",
+    "comando": {
+      "GA2": {
+        "sentido": "tras",
+        "agulo": 90,
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:35.882342",
+    "comando": {
+      "GA2": {
+        "sentido": "tras",
+        "agulo": 90,
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:35.989619",
+    "comando": {
+      "GA2": {
+        "sentido": "tras",
+        "agulo": 90,
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:36.096988",
+    "comando": {
+      "GA2": {
+        "sentido": "tras",
+        "agulo": 90,
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:36.204187",
+    "comando": {
+      "GA2": {
+        "sentido": "tras",
+        "agulo": 90,
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:36.311230",
+    "comando": {
+      "GA2": {
+        "sentido": "tras",
+        "agulo": 90,
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:36.418459",
+    "comando": {
+      "GA2": {
+        "sentido": "tras",
+        "agulo": 90,
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:36.525919",
+    "comando": {
+      "GA2": {
+        "sentido": "tras",
+        "agulo": 90,
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:36.633430",
+    "comando": {
+      "GA2": {
+        "sentido": "tras",
+        "agulo": 90,
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:36.741059",
+    "comando": {
+      "GA2": {
+        "sentido": "tras",
+        "agulo": 90,
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:36.848633",
+    "comando": {
+      "GA2": {
+        "sentido": "tras",
+        "agulo": 90,
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:36.955691",
+    "comando": {
+      "GA2": {
+        "sentido": "tras",
+        "agulo": 90,
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:37.062924",
+    "comando": {
+      "GA2": {
+        "sentido": "tras",
+        "agulo": 90,
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:37.170150",
+    "comando": {
+      "GA2": {
+        "sentido": "tras",
+        "agulo": 90,
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:37.440437",
+    "comando": {
+      "GA2": {
+        "sentido": "tras",
+        "agulo": 90,
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:37.547801",
+    "comando": {
+      "GA2": {
+        "sentido": "tras",
+        "agulo": 90,
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:37.655309",
+    "comando": {
+      "GA2": {
+        "sentido": "tras",
+        "agulo": 90,
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:37.762735",
+    "comando": {
+      "GA2": {
+        "sentido": "tras",
+        "agulo": 90,
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:37.870384",
+    "comando": {
+      "GA2": {
+        "sentido": "tras",
+        "agulo": 90,
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:37.977624",
+    "comando": {
+      "GA2": {
+        "sentido": "tras",
+        "agulo": 90,
+        "passos": 10
+      }
+    }
+  },
+  {
+    "timestamp": "2025-08-23 20:51:38.085422",
+    "comando": {
+      "GA2": {
+        "sentido": "tras",
+        "agulo": 90,
+        "passos": 10
+      }
+    }
+  }
+]

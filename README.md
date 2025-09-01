@@ -25,6 +25,7 @@ flask-cors
 inputs
 pyqt5
 pyqtwebengine
+plyer
 ````
 
 **Passo a passo recomendado:**
@@ -72,7 +73,20 @@ Após clonar o repositório e instalar todas as bibliotecas:
 
 ### <img src="https://img.icons8.com/fluency/48/windows-10.png" width="20"/> Windows
 
-Clique duas vezes no arquivo:
+No código, altere a verificação da porta serial para:
+
+```python
+if "Arduino" in porta.description or "/dev/ttyUSB0" in porta.device:
+    # Windows: 'COM3', Linux: '/dev/ttyUSB0'
+```
+
+⚠️ **Atenção:** pode haver problemas com o sistema de notificações no Windows, portanto pode ser necessário fazer ajustes específicos.
+Ainda não realizei testes no Windows, então seria importante validar.
+Se você testar e conseguir fazer funcionar, pode me contatar pelo e-mail disponível no meu perfil do GitHub para compartilhar a modificação.
+
+> O objetivo principal do projeto é funcionar corretamente no Linux, por ser o sistema prioritário em projetos de escala real e industrial. O Linux oferece maior flexibilidade, estabilidade e suporte para aplicações desse tipo.
+
+Para executar no Windows, clique duas vezes no arquivo:
 
 ```
 start_robot.bat
@@ -87,36 +101,6 @@ No Linux, existem **duas formas** de executar:
 
 ### **1) Pelo código-fonte (modo desenvolvimento)**
 
-Antes de executar o código, edite as variáveis de caminho no seu script para apontar corretamente para os arquivos, **comentando ou descomentando** as linhas conforme a forma de execução.
-
-#### ➤ Se for executar diretamente com `.sh` ou `.bat`:
-
-Use caminhos **relativos**. Isso facilita a execução no terminal sem precisar compilar o programa.
-
-A alteração deve ser feita nos arquivos:
-**`app_flask.py`** e **`braco_robotico.py`**
-
-Exemplo:
-
-**`app_flask.py`**
-
-```python
-# Caminhos relativos (uso com .sh ou .bat)
-CAMINHO_COMANDO = 'comando.json'
-DIRETORIO_HISTORICO = 'historico_de_comandos'
-```
-
-**`braco_robotico.py`**
-
-```python
-# Caminhos relativos (uso com .sh ou .bat)
-CAMINHO_COMANDO = 'comando.json'
-```
-
-Certifique-se de **comentar as linhas que utilizam `BASE_DIR`**.
-
-
----
 
 #### ➤  Usando o script de inicialização:
 
