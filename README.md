@@ -214,12 +214,14 @@ Assim, você poderá iniciar o sistema com um **clique**.
 
 ## <img src="https://img.icons8.com/fluency/48/conference-background-selected.png" width="28"/> Autores
 
-Desenvolvido por **Leonardo De Oliveira Prado** e **Felipe Silveira Volpe**.
+Desenvolvido por  
+**[Leonardo De Oliveira Prado (Leooliprado)](https://github.com/Leooliprado)** e  
+**[Felipe Silveira Volpe (FelipeVolpe)](https://github.com/FelipeVolpe)**
 
 ---
 
-## <img src="https://img.icons8.com/fluency/48/privacy.png" width="28"/> Licença
+## 📜 Licença
 
-Este projeto é de uso livre, inclusive para modificações, **desde que o autor principal seja mencionado** nos créditos de qualquer versão derivada.
+Este projeto está licenciado sob os termos da [Licença](./LICENSE).
 
----
+
