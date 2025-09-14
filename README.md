@@ -228,8 +228,8 @@ sudo apt install libxcb-xinerama0 libxcb-xinerama0-dev \
    * Conecte o **módulo do motor de passo 28BYJ-48** com o **driver ULN2003** (responsável pela garra).
    * Com um **jumper**, feche o curto entre o **V5** e o **VCC**, conforme a imagem abaixo:
 
-  ![Conexão do ULN2003 com Arduino](https://github.com/Leooliprado/braco-robotico-industrial/blob/main/img/1.jpeg)
-  
+<img src="https://github.com/Leooliprado/braco-robotico-industrial/blob/main/img/1.jpeg" width="500"/>  
+
    * Faça as ligações dos pinos conforme listado:
 
      * **Pinos digitais:** 4, 6, 5 e 11
