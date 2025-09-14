@@ -228,7 +228,7 @@ sudo apt install libxcb-xinerama0 libxcb-xinerama0-dev \
    * Conecte o **módulo do motor de passo 28BYJ-48** com o **driver ULN2003** (responsável pela garra).
    * Com um **jumper**, feche o curto entre o **V5** e o **VCC**, conforme a imagem abaixo:
 
-<img src="https://github.com/Leooliprado/braco-robotico-industrial/blob/main/img/1.jpeg" width="500"/>  
+<img src="https://github.com/Leooliprado/braco-robotico-industrial/blob/main/img/1.jpeg" width="200"/>  
 
    * Faça as ligações dos pinos conforme listado:
 
@@ -236,7 +236,9 @@ sudo apt install libxcb-xinerama0 libxcb-xinerama0-dev \
      * **GND do driver** → **GND do Arduino Mega 2560**
      * **VCC positivo do driver** → **Fonte externa de 5V**
 
-   *(imagem aqui)*
+   
+
+<img src="https://github.com/Leooliprado/braco-robotico-industrial/blob/main/img/2.jpeg" width="200"/>
 
 ---
 
@@ -246,7 +248,9 @@ sudo apt install libxcb-xinerama0 libxcb-xinerama0-dev \
 
    Dessa forma, o Arduino Mega controla os motores de passo com segurança, evitando sobrecarga na própria placa.
 
-   *(imagem aqui)*
+  
+
+<img src="https://github.com/Leooliprado/braco-robotico-industrial/blob/main/img/3.jpeg" width="200"/>
 
 ---
 
@@ -256,7 +260,9 @@ sudo apt install libxcb-xinerama0 libxcb-xinerama0-dev \
    * A RAMPS já possui conectores dedicados para os eixos: **X, Y, Z, GA e GA2**.
    * Cada driver A4988 deve estar corretamente encaixado na RAMPS, respeitando a orientação.
 
-   *(imagem aqui)*
+  
+
+<img src="https://github.com/Leooliprado/braco-robotico-industrial/blob/main/img/4.jpeg" width="200"/>
 
 ---
 
