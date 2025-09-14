@@ -205,18 +205,67 @@ sudo apt install libxcb-xinerama0 libxcb-xinerama0-dev \
 ```
 
 
----
 
-### 🚫 Aviso no Windows
-
-```
-⚠️ Pode haver problemas com o sistema de notificações no Windows.
-```
-
-Ainda não testado extensivamente. Caso encontre erros, será necessário ajustar a biblioteca `plyer` ou desabilitar notificações no Windows.
 
 ---
 
+## ⚙️ Montagem do Braço Robótico e Programação
+
+1. **Carregar o código no Arduino**
+   O código do braço robótico está no diretório:
+
+   ```bash
+   robo_braco/braco_robo/braco_robo.ino
+   ```
+
+   Abra esse arquivo na **Arduino IDE** e faça o upload para a placa **Arduino Mega 2560**.
+
+---
+
+2. **Montagem e conexões**
+
+   * Utilize a placa **Arduino Mega 2560 R3** junto com a **RAMPS 1.4** como controlador.
+   * Conecte o **módulo do motor de passo 28BYJ-48** com o **driver ULN2003** (responsável pela garra).
+   * Com um **jumper**, feche o curto entre o **V5** e o **VCC**, conforme a imagem abaixo:
+
+   *(imagem aqui)*
+
+   * Faça as ligações dos pinos conforme listado:
+
+     * **Pinos digitais:** 4, 6, 5 e 11
+     * **GND do driver** → **GND do Arduino Mega 2560**
+     * **VCC positivo do driver** → **Fonte externa de 5V**
+
+   *(imagem aqui)*
+
+---
+
+3. **Fonte de alimentação**
+   Recomenda-se utilizar uma **fonte externa estável**.
+   No meu caso, estou usando um **diminuidor de tensão (step-down)**, que converte **12V para 5V**.
+
+   Dessa forma, o Arduino Mega controla os motores de passo com segurança, evitando sobrecarga na própria placa.
+
+   *(imagem aqui)*
+
+---
+
+4. **Motores Nema 17 (eixos principais)**
+
+   * Os outros **4 motores de passo Nema 17** são conectados diretamente na **RAMPS 1.4**, cada um com seu respectivo **driver A4988**.
+   * A RAMPS já possui conectores dedicados para os eixos: **X, Y, Z, GA e GA2**.
+   * Cada driver A4988 deve estar corretamente encaixado na RAMPS, respeitando a orientação.
+
+   *(imagem aqui)*
+
+---
+
+Assim, você terá:
+
+* **Motores Nema 17** (eixos principais) controlados pela RAMPS + A4988
+* **Motor 28BYJ-48 (garra)** controlado pelo ULN2003 conectado diretamente ao Arduino
+
+---
 
 
 
