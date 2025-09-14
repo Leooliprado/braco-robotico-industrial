@@ -165,6 +165,60 @@ Assim, você poderá iniciar o sistema com um **clique**.
 
 ---
 
+## ❗ Erros Comuns e Soluções
+
+### 🚫 Erro de Permissão no Arduino
+
+```
+[ERRO] Falha ao conectar em /dev/ttyUSB0: [Errno 13] Permission denied: '/dev/ttyUSB0'
+```
+
+**Causa:** Seu usuário não tem permissão para acessar a porta serial do Arduino.
+**Solução:**
+
+```bash
+sudo usermod -aG dialout seu_user
+```
+
+Depois **faça logout/login** (ou reinicie o PC).
+
+
+---
+
+### 🚫 Erro ao abrir janela do Qt (plugin `xcb`)
+
+```
+qt.qpa.plugin: Could not load the Qt platform plugin "xcb" in "" even though it was found.
+This application failed to start because no Qt platform plugin could be initialized.
+```
+
+**Causa:** O Qt (PyQt5) não encontra as dependências do plugin gráfico `xcb`.
+**Solução:** Instale as bibliotecas necessárias:
+
+```bash
+sudo apt update
+sudo apt install libxcb-xinerama0 libxcb-xinerama0-dev \
+                 libx11-xcb1 libx11-xcb-dev \
+                 libglu1-mesa libglu1-mesa-dev \
+                 libxrender1 libxi6 libxrandr2 \
+                 libxss1 libxtst6
+```
+
+
+---
+
+### 🚫 Aviso no Windows
+
+```
+⚠️ Pode haver problemas com o sistema de notificações no Windows.
+```
+
+Ainda não testado extensivamente. Caso encontre erros, será necessário ajustar a biblioteca `plyer` ou desabilitar notificações no Windows.
+
+---
+
+
+
 
 ## <img src="https://img.icons8.com/fluency/48/controller.png" width="28"/> Funcionalidade
 
