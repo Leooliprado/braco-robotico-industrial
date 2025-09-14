@@ -268,8 +268,8 @@ sudo apt install libxcb-xinerama0 libxcb-xinerama0-dev \
 
 Assim, você terá:
 
-* **Motores Nema 17** (eixos principais) controlados pela RAMPS + A4988
-* **Motor 28BYJ-48 (garra)** controlado pelo ULN2003 conectado diretamente ao Arduino
+* **Motores Nema 17** (eixos principais) controlados pela RAMPS + DRV8825
+* **Motor 28BYJ-48 (garra)** controlado pelo ULN2003 conectado diretamente a RAMPS
 
 ---
 
