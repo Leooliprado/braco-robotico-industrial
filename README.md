@@ -256,7 +256,7 @@ sudo apt install libxcb-xinerama0 libxcb-xinerama0-dev \
 
 4. **Motores Nema 17 (eixos principais)**
 
-   * Os outros **4 motores de passo Nema 17** são conectados diretamente na **RAMPS 1.4**, cada um com seu respectivo **driver A4988**.
+   * Os outros **4 motores de passo Nema 17** são conectados diretamente na **RAMPS 1.4**, cada um com seu respectivo **driver DRV8825**.
    * A RAMPS já possui conectores dedicados para os eixos: **X, Y, Z, GA e GA2**.
    * Cada driver A4988 deve estar corretamente encaixado na RAMPS, respeitando a orientação.
 
@@ -288,6 +288,7 @@ Assim, você terá:
 ## <img src="https://img.icons8.com/fluency/48/electrical.png" width="28"/> Hardware Recomendado
 
 * Arduino Mega 2560
+* RAMPS 1.4 com driver DRV8825
 * Drivers A4988 ou similares
 * Motores de passo nema 17
 * Um motor de Passo 28BYJ-48 com o driver ULN2003
