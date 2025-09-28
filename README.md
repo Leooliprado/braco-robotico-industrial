@@ -7,9 +7,9 @@ Sistema de controle para braço robótico industrial utilizando um controle de v
 
 ## 🎥 Demonstração em Vídeo
 
-| Criação do Braço Robótico | Testando o Braço |
-|---------------------------|------------------|
-| [![Criação do Braço](https://img.youtube.com/vi/JeBH-Zhw5N4/0.jpg)](https://www.youtube.com/watch?v=JeBH-Zhw5N4) | [![Teste do Braço](https://img.youtube.com/vi/tTWtDkAqNEI/0.jpg)](https://www.youtube.com/shorts/tTWtDkAqNEI) |
+| Criação do Braço Robótico | Testando o Braço | Explicação do Projeto |
+|---------------------------|------------------|-----------------------|
+| [![Criação do Braço](https://img.youtube.com/vi/JeBH-Zhw5N4/0.jpg)](https://www.youtube.com/watch?v=JeBH-Zhw5N4) | [![Teste do Braço](https://img.youtube.com/vi/tTWtDkAqNEI/0.jpg)](https://www.youtube.com/shorts/tTWtDkAqNEI) | [![Explicação do Projeto](https://img.youtube.com/vi/KnwHQxlC-ao/0.jpg)](https://www.youtube.com/watch?v=KnwHQxlC-ao) |
 
 ---
 
