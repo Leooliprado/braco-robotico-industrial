@@ -4,6 +4,14 @@ Sistema de controle para braço robótico industrial utilizando um controle de v
 
 ---
 
+
+## Demonstração em Vídeo
+
+[![Assista ao vídeo](https://img.youtube.com/vi/tTWtDkAqNEI/0.jpg)](https://www.youtube.com/shorts/tTWtDkAqNEI)
+
+
+---
+
 ## <img src="https://img.icons8.com/fluency/48/download.png" width="28"/> Clonar o Projeto
 
 Clone o repositório com o comando abaixo:
