@@ -7,7 +7,7 @@ Sistema de controle para braço robótico industrial utilizando um controle de v
 
 ## Demonstração em Vídeo
 
-[![Assista ao vídeo](https://img.youtube.com/vi/tTWtDkAqNEI/0.jpg)](https://www.youtube.com/shorts/tTWtDkAqNEI)
+[![Assista ao vídeo](https://img.youtube.com/vi/tTWtDkAqNEI/0.jpg)](https://www.youtube.com/watch?v=JeBH-Zhw5N4)
 
 ---
 
