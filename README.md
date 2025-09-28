@@ -7,11 +7,12 @@ Sistema de controle para braço robótico industrial utilizando um controle de v
 
 ## 🎥 Demonstração em Vídeo
 
-| Vídeo 1 | Vídeo 2 |
-|---------|---------|
-| [![Vídeo 1](https://img.youtube.com/vi/tTWtDkAqNEI/0.jpg)](https://www.youtube.com/shorts/tTWtDkAqNEI) | [![Vídeo 2](https://img.youtube.com/vi/JeBH-Zhw5N4/0.jpg)](https://www.youtube.com/watch?v=JeBH-Zhw5N4) |
+| Criação do Braço Robótico | Testando o Braço |
+|---------------------------|------------------|
+| [![Criação do Braço](https://img.youtube.com/vi/JeBH-Zhw5N4/0.jpg)](https://www.youtube.com/watch?v=JeBH-Zhw5N4) | [![Teste do Braço](https://img.youtube.com/vi/tTWtDkAqNEI/0.jpg)](https://www.youtube.com/shorts/tTWtDkAqNEI) |
 
 ---
+
 ## <img src="https://img.icons8.com/fluency/48/download.png" width="28"/> Clonar o Projeto
 
 Clone o repositório com o comando abaixo:
